@@ -1,0 +1,4 @@
+highlighter: pygments
+safe: true
+lsi: false
+encoding: utf-8
