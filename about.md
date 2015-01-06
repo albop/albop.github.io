@@ -7,3 +7,8 @@ layout: default
 * Curriculum: [cv](./files/resume_october_2014.pdf)
 * Email: [pablo.winant@gmail.com](mailto:pablo.winant@gmail.com)
 * Github: [albop](https://github.com/albop)
+
+* Research Interests:
+    - macro-finance
+    - inequalities
+    - computational economics
