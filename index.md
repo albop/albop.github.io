@@ -4,11 +4,11 @@ layout: default
 
 ## Work in Progress
 
-- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier ([paper](files/papers/financial_integration.pdf))
+- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier. ([paper](files/papers/financial_integration.pdf))
 
-- _A Model of External Debt and International Reserves_, with Raphael Espinoza  ([paper](files/papers/reserves.pdf))
+- _A Model of External Debt and International Reserves_, with Raphael Espinoza.  ([paper](files/papers/reserves.pdf))
 
-- _Dynamic Portfolios in DSGE Models_ ([paper](files/papers/dynamic_portfolios.pdf))
+- _Dynamic Portfolios in DSGE Models_. ([paper](files/papers/dynamic_portfolios.pdf))
 
 
 
@@ -18,7 +18,7 @@ layout: default
 
         The paper studies how high household leverage and crises can be caused by changes in the income distribution. Empirically, the periods 1920-1929 and 1983-2008 both exhibited a large increase in the income share of high-income households, a large increase in debt leverage of low- and middle-income households, and an eventual financial and real crisis. The paper presents a theoretical model where higher leverage and crises are the endogenous result of a growing income share of high-income households. The model matches the profiles of the income distribution, the debt-to-income ratio and crisis risk for the three decades preceding the Great Recession.
 
-- _The Risky Steady-State_, with Helene Rey and Nicolas Coeurdacier, American Economic Review, Papers and Proceedings, 2011.
+- _The Risky Steady-State_, with Helene Rey and Nicolas Coeurdacier, American Economic Review, Papers and Proceedings, 2011. ([paper](files/papers/the_risky_steady_state_1.pdf))
 
         We propose a simple quantitative method to linearize around the risky steady state of a small open economy. Unlike when the deterministic steady state is used, the net foreign asset position is well defined. We allow for both stochastic income and stochastic interest rate.
 
