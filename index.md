@@ -29,7 +29,6 @@ layout: default
 
 
 
-
 ## Software
 
 [http://albop.github.com/dolo/](dolo) is a python library for economic modeling.
