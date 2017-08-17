@@ -4,6 +4,11 @@ layout: default
 
 ## Work in Progress
 
+
+- _Back in Time Fast. Improved Time Iteration._ ([paper](iti.pdf))
+
+- _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry. ([paper](files/papers/reserves_and_outflows_030817.pdf))
+
 - _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier. ([paper](files/papers/financial_integration.pdf))
 
 - _A Model of External Debt and International Reserves_, with Raphael Espinoza.  ([paper](files/papers/reserves.pdf))
