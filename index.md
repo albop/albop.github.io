@@ -5,7 +5,7 @@ layout: default
 ## Work in Progress
 
 
-- _Back in Time Fast. Improved Time Iteration._ ([paper](iti.pdf))
+- _Back in Time Fast. Improved Time Iteration._ ([paper](files/papers/iti.pdf))
 
 - _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry. ([paper](files/papers/reserves_and_outflows_030817.pdf))
 
