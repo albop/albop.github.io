@@ -7,7 +7,7 @@ layout: default
 
 - _Back in Time Fast. Improved Time Iteration._ ([paper](files/papers/iti.pdf))
 
-- _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry. ([paper](files/papers/reserves_and_outflows_030817.pdf))
+- _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière, Alexander Richter and Nathaniel Throckmorton.
 
 - _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier. ([paper](files/papers/financial_integration.pdf))
 
@@ -19,7 +19,9 @@ layout: default
 
 ## Published papers
 
-- _Inequality, Leverage and Crises_, Michael Kumhof and Romain Rancière. Forthcoming in 2015, American Economic Review. ([paper](files/papers/inequalities.pdf))
+- _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry, forthcoming in IMF Economic Review ([paper](files/papers/reserves_and_outflows_030817.pdf))
+
+- _Inequality, Leverage and Crises_, Michael Kumhof and Romain Rancière, American Economic Review, 2015 ([paper](files/papers/inequalities.pdf))
 
         The paper studies how high household leverage and crises can be caused by changes in the income distribution. Empirically, the periods 1920-1929 and 1983-2008 both exhibited a large increase in the income share of high-income households, a large increase in debt leverage of low- and middle-income households, and an eventual financial and real crisis. The paper presents a theoretical model where higher leverage and crises are the endogenous result of a growing income share of high-income households. The model matches the profiles of the income distribution, the debt-to-income ratio and crisis risk for the three decades preceding the Great Recession.
 
@@ -36,5 +38,5 @@ layout: default
 
 ## Software
 
-Dolo is a python library for economic modeling in [http://econforge.github.com/dolo/](python)
-and [http://econforge.github.com/dolo/](Julia).
+Dolo is a library for economic modeling in [python](https://github.com/econforge/dolo) and
+and [julia](https://github.com/econforge/Dolo.jl).
