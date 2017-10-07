@@ -4,7 +4,6 @@ layout: default
 
 ## Work in Progress
 
-
 - _Back in Time Fast. Improved Time Iteration._ ([paper](files/papers/iti.pdf))
 
 - _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière, Alexander Richter and Nathaniel Throckmorton.
@@ -20,6 +19,8 @@ layout: default
 ## Published papers
 
 - _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry, forthcoming in IMF Economic Review ([paper](files/papers/reserves_and_outflows_030817.pdf))
+
+        We analyze the optimal intervention policy for an emerging market central bank which wishes to stabilize the exchange rate in response to a capital outflow shock, but possesses limited reserves. Using a stylized framework, we show that the zero lower bound on reserves combined with limited capital mobility generates a time inconsistency problem, and we compare outcomes under full, zero and partial commitment. A central bank with full commitment achieves a gradual exchange rate depreciation to the pure float level by promising a path of sustained intervention, including a commitment to exhaust reserves after particularly adverse shocks. A central bank without commitment intervenes less, wishing instead to preserve at least some reserves forever, and suffers a larger exchange rate depreciation. For more persistent shocks, the time inconsistency problem is larger, and simple intervention rules can achieve welfare gains relative to discretion. We relate the optimal intervention policy to the composition of investors in the FX market.
 
 - _Inequality, Leverage and Crises_, Michael Kumhof and Romain Rancière, American Economic Review, 2015 ([paper](files/papers/inequalities.pdf))
 
