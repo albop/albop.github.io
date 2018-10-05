@@ -4,6 +4,8 @@ layout: default
 
 ## Work in Progress
 
+- _The Stochastic Lower Bound_, with Riccardo Masolo. ([paper](files/papers/slb.pdf))
+
 - _Back in Time Fast. Improved Time Iteration._ ([paper](files/papers/iti.pdf))
 
 - _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière, Alexander Richter and Nathaniel Throckmorton.
