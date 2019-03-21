@@ -4,25 +4,26 @@ layout: default
 
 ## Work in Progress
 
-- _Deep Learning for Solving Dynamic Economic Models_, with Lilia Maliar and Serguei Maliar.
-
-- _The Stochastic Lower Bound_, with Riccardo Masolo. ([paper](files/papers/slb.pdf))
+- _Willl Artificial Intelligence Replace Computational Economists Any Time Soon?_, with Lilia Maliar and Serguei Maliar.
 
 - _Back in Time Fast. Improved Time Iteration_. ([paper](files/papers/iti.pdf))
 
-- _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière, Alexander Richter and Nathaniel Throckmorton.
-
-- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier. ([paper](files/papers/financial_integration.pdf))
+- _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière.
 
 - _A Model of External Debt and International Reserves_, with Raphael Espinoza.  ([paper](files/papers/reserves.pdf))
 
 - _Dynamic Portfolios in DSGE Models_. ([paper](files/papers/dynamic_portfolios.pdf))
 
 
-
 ## Published papers
 
-- _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry, forthcoming in IMF Economic Review ([paper](files/papers/reserves_and_outflows_030817.pdf))
+- _The Stochastic Lower Bound_, with Riccardo Masolo, accepted in Economics Letters ([paper](files/papers/slb.pdf))
+
+- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier, accepted in Journal of Monetary Economics. ([paper](files/papers/financial_integration.pdf))
+
+        We revisit the debate on the benefits of financial integration in a two-country neoclassical growth model with aggregate uncertainty. The framework accounts simultaneously for gains from a more efficient capital allocation and gains from risk sharing—together with their interaction. Global numerical methods allow for meaningful welfare comparisons. Gains from integration are quantitatively small, even for riskier and capital scarce emerging economies. These countries import capital for efficiency reasons before exporting it for self-insurance, leading to capital flows and growth reversals along the transition. This opens the door to richer empirical implications than previously considered in the literature.
+
+- _Managing Capital Outflows with Limited Reserves_, with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry, IMF Economic Review, 2018 ([paper](files/papers/reserves_and_outflows_030817.pdf))
 
         We analyze the optimal intervention policy for an emerging market central bank which wishes to stabilize the exchange rate in response to a capital outflow shock, but possesses limited reserves. Using a stylized framework, we show that the zero lower bound on reserves combined with limited capital mobility generates a time inconsistency problem, and we compare outcomes under full, zero and partial commitment. A central bank with full commitment achieves a gradual exchange rate depreciation to the pure float level by promising a path of sustained intervention, including a commitment to exhaust reserves after particularly adverse shocks. A central bank without commitment intervenes less, wishing instead to preserve at least some reserves forever, and suffers a larger exchange rate depreciation. For more persistent shocks, the time inconsistency problem is larger, and simple intervention rules can achieve welfare gains relative to discretion. We relate the optimal intervention policy to the composition of investors in the FX market.
 
