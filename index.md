@@ -17,9 +17,9 @@ layout: default
 
 ## Published papers
 
-- _The Stochastic Lower Bound_, with Riccardo Masolo, accepted in Economics Letters ([paper](files/papers/slb.pdf))
+- _The Stochastic Lower Bound_, with Riccardo Masolo, Economics Letters, 2019 ([paper](files/papers/slb.pdf))
 
-- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier, accepted in Journal of Monetary Economics. ([paper](files/papers/financial_integration.pdf))
+- _Financial Integration and Growth in a Risky World_, with Hélène Rey and Nicolas Coeurdacier, Journal of Monetary Economics, 2019. ([paper](files/papers/financial_integration.pdf))
 
         We revisit the debate on the benefits of financial integration in a two-country neoclassical growth model with aggregate uncertainty. The framework accounts simultaneously for gains from a more efficient capital allocation and gains from risk sharing—together with their interaction. Global numerical methods allow for meaningful welfare comparisons. Gains from integration are quantitatively small, even for riskier and capital scarce emerging economies. These countries import capital for efficiency reasons before exporting it for self-insurance, leading to capital flows and growth reversals along the transition. This opens the door to richer empirical implications than previously considered in the literature.
 
