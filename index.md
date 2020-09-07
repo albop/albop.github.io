@@ -4,7 +4,7 @@ layout: default
 
 ## Work in Progress
 
-- _Willl Artificial Intelligence Replace Computational Economists Any Time Soon?_, with Lilia Maliar and Serguei Maliar. ([paper](files/papers/DP14024-2.pdf))
+- _Willl Artificial Intelligence Replace Computational Economists Any Time Soon?_, with Lilia Maliar and Serguei Maliar. ([paper](files/papers/DP14024-2.pdf), Reject and Resubmit at Journal of Monetary Economics)
 
 - _Back in Time Fast. Improved Time Iteration_. ([paper](files/papers/iti.pdf))
 
