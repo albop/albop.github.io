@@ -41,6 +41,10 @@ layout: default
         We introduce a vector version of the ARCH(∞) equation yielding a simple approach to various models like bilinear or GARCH models. To this aim we provide an explicit chaotic expansion of a solution for this ARCH(∞) equation, and show the uniqueness of this solution under reasonable conditions. Independent or N-Markov approximations of this process allow to simulate a trajectory or to derive bounds for their weak dependence coeﬃcients as deﬁned by Doukhan and Louhichi (1999). We ﬁnally consider a long range dependent version of this model; in this case we provide an existence and uniqueness result
 
 
+## Courses
+
+- Topics In Economics ([link](https://www.mosphere.fr/tie/#/4))
+
 
 ## Software
 
