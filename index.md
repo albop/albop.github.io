@@ -2,13 +2,6 @@
 layout: default
 ---
 
-## Work in Progress
-
-
-- _Back in Time Fast. Improved Time Iteration_. ([paper](files/papers/iti.pdf))
-
-- _Income Inequality and Current Account Balances_, with Michael Kumhof, Ezgi Ozsogut, Romain Rancière.
-
 
 ## Published papers
 
