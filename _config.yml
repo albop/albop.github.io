@@ -2,6 +2,6 @@
 title: Pablo Winant's webpage
 tag_text: Pablo Winant
 # description: Solo is a Jekyll theme that supports single-page websites only, but supports them well. Yes, it’s responsive.
-
+ skin: dark
 # Build settings
 markdown: kramdown
