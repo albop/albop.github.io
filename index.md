@@ -5,7 +5,7 @@ layout: default
 
 ## Published papers
 
-- _Deep Learning for Solving Dynamic Economic Models?_, with Lilia Maliar and Serguei Maliar, Journal of Monetary Economics, 2021 ([paper]([files/papers/DP14024-2.pdf](https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf))
+- _Deep Learning for Solving Dynamic Economic Models?_, with Lilia Maliar and Serguei Maliar, Journal of Monetary Economics, 2021 ([paper](https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf))
 
 - _The Stochastic Lower Bound_, with Riccardo Masolo, Economics Letters, 2019 ([paper](files/papers/slb.pdf))
 
