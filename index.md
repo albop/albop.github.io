@@ -24,6 +24,7 @@ layout: default
 
 - Topics In Economics ([link](https://www.mosphere.fr/tie/))
 - Data Based Economics ([link](https://www.mosphere.fr/dbe))
+- Macro II - Fluctuations ([link](https://www.mosphere.fr/ae2e6/))
 
 
 ## Software
