@@ -3,6 +3,8 @@ layout: default
 ---
 
 
+<mark>Computational Economics @ Bundesbank</mark>: [link](https://www.mosphere.fr/bbank_ce_2024)
+
 ## Published papers
 
 - _Deep Learning for Solving Dynamic Economic Models?_, with Lilia Maliar and Serguei Maliar, Journal of Monetary Economics, 2021 ([paper](https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf))
@@ -25,7 +27,6 @@ layout: default
 - Topics In Economics ([link](https://www.mosphere.fr/tie/))
 - Data Based Economics ([link](https://www.mosphere.fr/dbe))
 - Macro II - Fluctuations ([link](https://www.mosphere.fr/ae2e6/))
-
 
 ## Software
 
