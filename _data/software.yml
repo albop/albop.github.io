@@ -1,0 +1,113 @@
+- id: dolo-python
+  name: "Dolo.py"
+  tagline: "Python"
+  description: "Open-source framework for specifying, solving and simulating economic models. Supports perturbation methods, time iteration, value function iteration, and more."
+  url: "https://github.com/econforge/dolo"
+  docs: "https://dolo.readthedocs.io"
+  long_description: |
+    Open-source Python framework for specifying, solving and simulating dynamic economic models.
+    Models are written in a readable YAML format; solutions are policy functions that can be
+    simulated, plotted, and compared across parameterizations.
+
+    ```python
+    from dolo import yaml_import
+    from dolo import time_iteration
+
+    model = yaml_import('rbc.yaml')
+    dr = time_iteration(model)     
+    sim = model.simulate(dr, N=200)
+    ```
+
+    Supports perturbation methods (1st and 2nd order), time iteration, value function iteration,
+    and — since v0.8 — sparse Jacobians for large heterogeneous-agent models.
+  related:
+    - label: "Back in Time. Fast. (2026)"
+      type: paper
+      url: "/files/papers/accelerated_time_iteration.pdf"
+    - label: "Deep Learning for Dynamic Models"
+      type: paper
+      url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "Computational Macroeconomics (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Topics In Economics"
+      type: teaching
+      url: "https://www.mosphere.fr/tie/"
+    - label: "Dolo.jl (Julia port)"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "EconForge"
+      type: software
+      url: "https://github.com/econforge"
+    - label: "How can open-source software change economics?"
+      type: question
+      url: "#"
+
+- id: dolo-julia
+  name: "Dolo.jl"
+  tagline: "Julia"
+  description: "Julia port of Dolo with performance-focused solvers. Enables high-dimensional perturbation methods and faster simulation that are impractical in pure Python."
+  url: "https://github.com/econforge/Dolo.jl"
+  long_description: |
+    Julia port of Dolo with performance-focused solvers. The Julia implementation
+    unlocks high-dimensional perturbation methods and faster simulation that are
+    impractical in pure Python.
+
+    ```julia
+    using Dolo
+
+    model = yaml_import("rbc.yaml")
+    dr = time_iteration(model)        # solve
+    sim = simulate(model, dr, N=200)  # simulate
+    ```
+
+    Shares the same YAML model format as the Python version, so models transfer
+    directly. Particularly useful for high-dimensional state spaces and
+    heterogeneous-agent models requiring repeated solution.
+  related:
+    - label: "Dolo (Python)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "EconForge"
+      type: software
+      url: "https://github.com/econforge"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "/files/papers/accelerated_time_iteration.pdf"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"
+
+- id: econforge
+  name: "EconForge"
+  tagline: "Organization"
+  description: "GitHub organization hosting a growing collection of open-source tools for quantitative economics, including Dolo, interpolation utilities, and optimization routines."
+  url: "https://github.com/econforge"
+  long_description: |
+    GitHub organization hosting open-source tools for quantitative economics.
+    All packages are designed for reproducible, composable model workflows.
+
+    **Key repositories:**
+
+    - **Dolo** — model specification and solution in Python
+    - **Dolo.jl** — high-performance Julia port
+    - **interpolation.py** — fast multilinear and spline interpolation with python numba
+
+    The goal is to make model code part of the scientific argument —
+    readable, shareable, and reusable across projects.
+  related:
+    - label: "Dolo (Python)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "How can open-source software change economics?"
+      type: question
+      url: "#"
+    - label: "Computational Macroeconomics (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"

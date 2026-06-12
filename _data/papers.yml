@@ -1,0 +1,223 @@
+- id: back-in-time
+  title: "Back in Time. Fast. Accelerated Time Iteration."
+  journal: "Journal of Economic Dynamics and Control"
+  year: 2026
+  url: "/files/papers/accelerated_time_iteration.pdf"
+  abstract: "A fast algorithm for solving dynamic models using accelerated time iteration — substantially reducing computation time for standard economic models while maintaining accuracy."
+  long_description: |
+    Time iteration solves the Bellman equation **directly on the policy space**
+    rather than approximating the value function, avoiding a source of error.
+
+    \[ V(k) = \max_{c} \left\{ u(c) + \beta \cdot \mathbb{E}[V(k')] \right\} \]
+
+    The accelerated variant applies a Newton-type update at each iteration,
+    achieving **superlinear convergence** — the number of iterations to a
+    given tolerance falls dramatically compared to standard time iteration,
+    making it competitive with perturbation methods on accuracy while remaining
+    globally valid.
+  related:
+    - label: "Dolo (implementation)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl (Julia port)"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "Computational Macroeconomics (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"
+    - label: "On the accuracy of perturbation methods"
+      type: note
+      url: "#"
+
+- id: deep-learning
+  title: "Deep Learning for Solving Dynamic Economic Models?"
+  coauthors: "Lilia Maliar and Serguei Maliar"
+  journal: "Journal of Monetary Economics"
+  year: 2021
+  url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
+  abstract: "We compare deep learning to traditional numerical methods for solving dynamic economic models. Standard algorithms remain competitive, but deep learning opens new territory for very high-dimensional problems."
+  long_description: |
+    Can a neural network replace a numerical solver? We pit deep learning against
+    standard algorithms on a battery of dynamic economic models.
+
+    *V(s) ≈ V̂&#x03B8;(s) = NN&#x03B8;(s)*
+
+    **Result:** standard algorithms remain competitive for low-to-medium dimensional
+    problems, but deep learning opens genuinely new territory when the state space
+    has **10+ dimensions** — a regime where traditional grids and interpolation
+    methods break down entirely.
+
+    The paper also provides a framework for benchmarking numerical methods against
+    each other, which is now used in Dolo's test suite.
+  related:
+    - label: "Dolo"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "/files/papers/accelerated_time_iteration.pdf"
+    - label: "How can open-source software change economics?"
+      type: question
+      url: "#"
+    - label: "Topics In Economics (TIE)"
+      type: teaching
+      url: "https://www.mosphere.fr/tie/"
+
+- id: stochastic-lower-bound
+  title: "The Stochastic Lower Bound"
+  coauthors: "Riccardo Masolo"
+  journal: "Economics Letters"
+  year: 2019
+  url: "/files/papers/slb.pdf"
+  abstract: "We derive a lower bound on interest rates that accounts for uncertainty, showing it differs substantially from the deterministic case — with implications for monetary policy analysis."
+  long_description: |
+    The zero lower bound on interest rates is usually studied in **deterministic**
+    models. But when uncertainty is present, the effective lower bound is higher:
+
+    *i&#x209C; ≥ ī&#x02E2;&#x1D57;&#x1D52;&#x1D54;&#x02B0; > ī&#x1D30;&#x1D49;&#x1D57;*
+
+    Intuitively, a central bank facing uncertainty needs to keep more room to cut
+    rates, raising the effective bound above zero. This has direct implications for
+    how often the ZLB binds and how effective unconventional policy needs to be.
+
+    Solved using Dolo's occasionally-binding constraints toolkit.
+  related:
+    - label: "Dolo (solution method)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "The Risky Steady-State"
+      type: paper
+      url: "/files/papers/risky_steady_state_1.pdf"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+
+- id: financial-integration
+  title: "Financial Integration and Growth in a Risky World"
+  coauthors: "Hélène Rey and Nicolas Coeurdacier"
+  journal: "Journal of Monetary Economics"
+  year: 2019
+  url: "/files/papers/financial_integration.pdf"
+  abstract: "We study how financial integration affects growth and welfare in a world with aggregate risk — showing that integration can reduce growth when it amplifies risk sharing distortions."
+  long_description: |
+    Standard theory predicts financial integration raises welfare through better
+    risk sharing. We show this is **conditional on relative risk aversion**:
+
+    *E[r&#x1D464;] ↑ via integration → welfare ↑ or ↓ as σ ⋛ σ\**
+
+    When risk aversion is high, integration can *reduce* welfare by amplifying
+    precautionary saving motives and distorting capital allocation. The paper
+    reconciles the mixed empirical evidence on integration and growth with a
+    model that takes uncertainty seriously.
+  related:
+    - label: "The Risky Steady-State"
+      type: paper
+      url: "/files/papers/risky_steady_state_1.pdf"
+    - label: "Managing Capital Outflows"
+      type: paper
+      url: "/files/papers/reserves_and_outflows_030817.pdf"
+    - label: "Dolo (open-economy models)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+
+- id: capital-outflows
+  title: "Managing Capital Outflows with Limited Reserves"
+  coauthors: "Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry"
+  journal: "IMF Economic Review"
+  year: 2018
+  url: "/files/papers/reserves_and_outflows_030817.pdf"
+  abstract: "A model of optimal capital flow management when foreign reserves are limited. We characterize when capital controls and reserve interventions are complements or substitutes."
+  long_description: |
+    When a country faces sudden capital outflows, it has two tools: **capital
+    controls** (a tax τ on outflows) and **reserve intervention** (selling
+    foreign reserves R). When should they be used together?
+
+    *τ\* and R\* are complements when R < R̄*
+
+    When reserves are **scarce** (below threshold R̄), the two instruments
+    reinforce each other: using controls preserves reserves for future crises,
+    while reserve sales buy time to implement controls. Above the threshold,
+    they substitute. The paper provides a full characterization of the optimal
+    policy mix as a function of reserve adequacy.
+  related:
+    - label: "Financial Integration and Growth"
+      type: paper
+      url: "/files/papers/financial_integration.pdf"
+    - label: "The Risky Steady-State"
+      type: paper
+      url: "/files/papers/risky_steady_state_1.pdf"
+
+- id: inequality-leverage
+  title: "Inequality, Leverage and Crises"
+  coauthors: "Michael Kumhof and Romain Rancière"
+  journal: "American Economic Review"
+  year: 2015
+  url: "/files/papers/inequalities.pdf"
+  abstract: "Rising income inequality leads top earners to lend to bottom earners, increasing leverage and crisis risk. A model linking inequality to the financial crises of 1929 and 2008."
+  long_description: |
+    A two-agent model in which the income distribution drives financial fragility.
+    Top earners accumulate savings they lend to bottom earners — who borrow to
+    maintain consumption as their income share falls.
+
+    *σ(y) ↑ → D/Y ↑ → P(crisis) ↑*
+
+    The resulting debt overhang makes the economy fragile: a small shock can tip
+    it into a crisis. The mechanism matches the **run-up to 1929 and 2008** —
+    both preceded by decades of rising inequality and household leverage.
+
+    Taught in TIE and AE2E6 as a canonical example of how distribution and
+    macro-finance interact.
+  related:
+    - label: "Macro II – Fluctuations (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Topics In Economics"
+      type: teaching
+      url: "https://www.mosphere.fr/tie/"
+    - label: "Financial Integration and Growth"
+      type: paper
+      url: "/files/papers/financial_integration.pdf"
+
+- id: risky-steady-state
+  title: "The Risky Steady-State"
+  coauthors: "Helene Rey and Nicolas Coeurdacier"
+  journal: "American Economic Review, Papers and Proceedings"
+  year: 2011
+  url: "/files/papers/risky_steady_state_1.pdf"
+  abstract: "In models with uncertainty, the ergodic mean of endogenous variables differs from the deterministic steady state. We characterize this 'risky steady state' and its uses as an approximation point."
+  long_description: |
+    In a stochastic model, the long-run average of any variable **differs** from
+    its deterministic steady state. We call this the *risky steady state*:
+
+    *x̄&#x02B3;&#x2071;&#x02E2;&#x02B8;&#x02B8; = x̄&#x1D30;&#x1D49;&#x1D57; + ½ σ² · x&#x03C3;&#x03C3; + O(σ⁴)*
+
+    The correction term is **second-order in risk** σ and captures precautionary
+    motives — households save more when the future is uncertain, moving the
+    economy away from the certainty equivalent. Using the risky steady state as
+    the approximation point for perturbation methods substantially improves
+    accuracy for moderate-risk economies.
+  related:
+    - label: "Financial Integration and Growth"
+      type: paper
+      url: "/files/papers/financial_integration.pdf"
+    - label: "Stochastic Lower Bound"
+      type: paper
+      url: "/files/papers/slb.pdf"
+    - label: "Dolo (perturbation methods)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Macro II – Fluctuations"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+
+- id: larch
+  title: "A LARCH(∞) Vector Valued Process"
+  coauthors: "Paul Doukhan and Gilles Teyssière"
+  journal: "Lecture Notes in Statistics, 187, Springer"
+  year: 2006
+  url: "/files/papers/dwt1.pdf"
+  abstract: "We introduce and study a multivariate extension of the LARCH model with an infinite memory structure, establishing stationarity and limit theory for the resulting process."
+  related: []

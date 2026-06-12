@@ -1,8 +1,18 @@
 # Site settings
-title: Pablo Winant's webpage
-tag_text: Pablo Winant
-# description: Solo is a Jekyll theme that supports single-page websites only, but supports them well. Yes, it’s responsive.
-minima:
-  skin: dark
+title: "Pablo Winant"
+description: "Computational economist. I study economic dynamics through models and computation, build tools for economic modeling, and teach others how to use them."
+author: "Pablo Winant"
+email: "pwinant@escp.eu"
+github: "albop"
+url: "https://www.mosphere.fr"
+
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

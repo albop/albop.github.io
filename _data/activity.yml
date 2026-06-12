@@ -1,0 +1,125 @@
+- id: occasionally-binding
+  title: "Occasionally binding constraints in life-cycle models"
+  authors: "with G. Goldschmidt and N. Wonquin"
+  type: paper
+  date: "Apr 2024"
+  url: "#"
+  abstract: "Life-cycle models with borrowing limits create kinks in policy functions that standard perturbation methods miss. We develop efficient algorithms that handle these occasionally binding constraints without global methods."
+  related:
+    - label: "Dolo (solution toolkit)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl (fast solvers)"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "Macro II – Lecture notes"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Computational methods (CREST seminar)"
+      type: talk
+      url: "#"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "#"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"
+
+- id: dolo-08
+  title: "Dolo 0.8: sparse Jacobians, new solvers, and more"
+  subtitle: "Release"
+  type: software
+  date: "Feb 2024"
+  url: "https://github.com/econforge/dolo"
+  description: "Version 0.8 introduces sparse Jacobian computation, enabling perturbation methods for much larger models. New first-order and second-order solvers, improved model specification."
+  related:
+    - label: "Back in Time. Fast. (2025)"
+      type: paper
+      url: "#"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "On the accuracy of perturbation methods"
+      type: note
+      url: "#"
+    - label: "Computational methods (CREST seminar)"
+      type: talk
+      url: "#"
+    - label: "Computational Macroeconomics (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"
+
+- id: comp-macro-notes
+  title: "Computational Macroeconomics – Lecture Notes"
+  subtitle: "ESCP MSc in Economics"
+  type: teaching
+  date: "Jan 2024"
+  url: "https://www.mosphere.fr/ae2e6/"
+  description: "Notebooks and slides covering dynamic programming, DSGE models, and heterogeneous-agent models. Students build and solve their own models using Dolo throughout the course."
+  related:
+    - label: "Dolo (classroom tool)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl (advanced exercises)"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "#"
+    - label: "Inequality, Leverage and Crises"
+      type: paper
+      url: "files/papers/inequalities.pdf"
+    - label: "How should computational economics be taught?"
+      type: question
+      url: "#"
+
+- id: ha-seminar
+  title: "Computational methods for heterogeneous-agent models"
+  subtitle: "CREST Seminar"
+  type: talk
+  date: "Nov 2023"
+  url: "#"
+  description: "Recent advances in solving heterogeneous-agent models: perturbation around the stochastic steady state, sparse Jacobians, and what these enable for policy analysis."
+  related:
+    - label: "Dolo 0.8 release"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Computational Macroeconomics notes"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "#"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"
+
+- id: perturbation-accuracy
+  title: "On the accuracy of perturbation methods"
+  subtitle: "Research note"
+  type: note
+  date: "Oct 2023"
+  url: "#"
+  description: "A critical examination of when perturbation methods are reliable for dynamic models — and what this implies for the policy conclusions drawn from them."
+  related:
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "#"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "Dolo"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "How can HA models be solved efficiently?"
+      type: question
+      url: "#"

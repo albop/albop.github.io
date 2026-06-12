@@ -1,0 +1,68 @@
+- id: ha-efficiency
+  question: "How can heterogeneous-agent models be solved efficiently at scale?"
+  description: "High-dimensional state spaces break standard methods. Perturbation, sparse Jacobians, and time iteration open new possibilities — but require both theory and software."
+  related:
+    - label: "Back in Time. Fast. (2025)"
+      type: paper
+      url: "#"
+    - label: "Occasionally binding constraints"
+      type: paper
+      url: "#"
+    - label: "On the accuracy of perturbation methods"
+      type: note
+      url: "#"
+    - label: "Dolo 0.8 — sparse Jacobians"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl (performance solvers)"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "Computational Macroeconomics — notes"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Computational methods (CREST seminar)"
+      type: talk
+      url: "#"
+
+- id: teach-compute
+  question: "How should computational economics be taught to students who aren't programmers?"
+  description: "Economics becomes clearer when students can build and break models themselves. The course should be the lab notebook, not the lecture hall."
+  related:
+    - label: "Macro II – Fluctuations (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Topics in Economics"
+      type: teaching
+      url: "https://www.mosphere.fr/tie/"
+    - label: "Dolo (used in exercises)"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Computational Macroeconomics notes"
+      type: note
+      url: "https://www.mosphere.fr/ae2e6/"
+    - label: "Deep Learning for Dynamic Models"
+      type: paper
+      url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
+
+- id: software-practice
+  question: "How can open-source software change the practice of quantitative economics?"
+  description: "Model specification, solution, and simulation should be reproducible, shareable, and composable. Code is part of the argument, not an afterthought."
+  related:
+    - label: "Dolo"
+      type: software
+      url: "https://github.com/econforge/dolo"
+    - label: "Dolo.jl"
+      type: software
+      url: "https://github.com/econforge/Dolo.jl"
+    - label: "EconForge"
+      type: software
+      url: "https://github.com/econforge"
+    - label: "Deep Learning for Dynamic Models"
+      type: paper
+      url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
+    - label: "Back in Time. Fast."
+      type: paper
+      url: "#"
+    - label: "Computational Macroeconomics (AE2E6)"
+      type: teaching
+      url: "https://www.mosphere.fr/ae2e6/"

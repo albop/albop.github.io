@@ -1,0 +1,70 @@
+<aside class="right-panel">
+
+  <!-- ── PANEL HEADER ──────────────────────────────── -->
+  <div class="panel-header">
+    <div class="panel-header-left">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span class="panel-header-title">Research Workspace</span>
+    </div>
+    <div class="panel-status" id="panel-status" aria-live="polite">
+      <span class="panel-status-dot" id="panel-status-dot"></span>
+      <span class="panel-status-text" id="panel-status-text">Hover to preview</span>
+    </div>
+  </div>
+
+  <div class="workspace" id="workspace">
+
+    <!-- ── DEFAULT STATE ──────────────────────────────── -->
+    <div class="workspace-default" id="workspace-default">
+
+      <p class="workspace-hint">
+        Hover any item to preview it here.<br>
+        <span style="color:var(--text-light)">Click to lock the selection.</span>
+      </p>
+
+      <!-- Research map — clarified with hover affordance cues -->
+      <div class="workspace-map-wrap">
+        <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" aria-hidden="true">
+          <line x1="130" y1="90" x2="55"  y2="40"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="205" y2="40"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="55"  y2="145" stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="205" y2="145" stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="20"  y2="90"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="240" y2="90"  stroke="var(--border)" stroke-width="1.5"/>
+          <circle cx="130" cy="90" r="26" fill="#1A3050" opacity=".85"/>
+          <text x="130" y="86"  text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">Questions</text>
+          <text x="130" y="95"  text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">drive</text>
+          <text x="130" y="104" text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">everything</text>
+          <circle cx="55"  cy="40"  r="16" fill="#EBF3FC"/>
+          <text x="55"  y="37" text-anchor="middle" fill="#1A3050" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Heterogeneous</text>
+          <text x="55"  y="45" text-anchor="middle" fill="#1A3050" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">agents</text>
+          <circle cx="205" cy="40"  r="16" fill="#FEF3E8"/>
+          <text x="205" y="37" text-anchor="middle" fill="#B45309" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Inequality &amp;</text>
+          <text x="205" y="45" text-anchor="middle" fill="#B45309" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">distribution</text>
+          <circle cx="55"  cy="145" r="16" fill="#EAF5F0"/>
+          <text x="55"  y="142" text-anchor="middle" fill="#1A6A4A" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Numerical</text>
+          <text x="55"  y="150" text-anchor="middle" fill="#1A6A4A" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">methods</text>
+          <circle cx="205" cy="145" r="16" fill="#F3EEF9"/>
+          <text x="205" y="142" text-anchor="middle" fill="#6D28D9" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Macro</text>
+          <text x="205" y="150" text-anchor="middle" fill="#6D28D9" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">dynamics</text>
+          <circle cx="20"  cy="90"  r="14" fill="#EAF5F0"/>
+          <text x="20"  y="87" text-anchor="middle" fill="#1A6A4A" font-size="5" font-family="Inter,sans-serif" font-weight="600">Modeling</text>
+          <text x="20"  y="95" text-anchor="middle" fill="#1A6A4A" font-size="5" font-family="Inter,sans-serif" font-weight="600">software</text>
+          <circle cx="240" cy="90"  r="14" fill="#EBF3FC"/>
+          <text x="240" y="87" text-anchor="middle" fill="#1A5A9A" font-size="5" font-family="Inter,sans-serif" font-weight="600">Open</text>
+          <text x="240" y="95" text-anchor="middle" fill="#1A5A9A" font-size="5" font-family="Inter,sans-serif" font-weight="600">economy</text>
+        </svg>
+        <p class="workspace-map-caption">
+          Research, teaching &amp; software are interconnected.<br>Select any item to explore the links.
+        </p>
+      </div>
+
+    </div><!-- /.workspace-default -->
+
+    <!-- ── ACTIVE STATE (populated by JS) ─────────── -->
+    <div class="workspace-active" id="workspace-active">
+      <!-- JS fills this in -->
+    </div>
+
+  </div><!-- /.workspace -->
+</aside>

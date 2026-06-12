@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Computational economist. I study economic dynamics through models and computation, build tools for economic modeling, and teach others how to use them.">
+<meta name="author" content="Pablo Winant">
+<meta property="og:title" content="Research">
+<meta property="og:description" content="Computational economist. I study economic dynamics through models and computation, build tools for economic modeling, and teach others how to use them.">
+<meta property="og:type" content="website">
+<title>Research</title>
+<link rel="icon" href="/favicon.png">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<!-- Styles -->
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/panel.css">
+<!-- highlight.js — syntax highlighting for panel code blocks -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/julia.min.js"></script>
+<!-- KaTeX — math rendering (Kramdown outputs \(...\) and \[...\] with math_engine: mathjax) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script>
+  var KATEX_OPTS = {
+    delimiters: [
+      {left: '\\[', right: '\\]', display: true},
+      {left: '\\(', right: '\\)', display: false}
+    ],
+    throwOnError: false
+  };
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.renderMathInElement) renderMathInElement(document.body, KATEX_OPTS);
+  });
+</script>
+<!-- Early theme init to prevent flash -->
+<script>
+  (function(){
+    var t = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8936544-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'UA-8936544-1');
+</script>
+
+</head>
+<body>
+  <div class="site-layout">
+
+    <aside class="sidebar">
+
+  <!-- Name + role -->
+  <div>
+    <a href="/" class="sidebar-name" style="text-decoration:none;color:inherit;display:block">Pablo<br>Winant</a>
+    <div class="sidebar-role" style="margin-top:.5rem">Computational Economist</div>
+  </div>
+
+  <!-- Photo -->
+  <img
+    id="sidebar-photo"
+    src="/files/WINANT_Pablo.jpg"
+    data-src-light="/files/WINANT_Pablo_white.png"
+    data-src-dark="/files/WINANT_Pablo.jpg"
+    alt="Pablo Winant"
+    class="sidebar-photo"
+    loading="lazy">
+
+  <!-- Bio -->
+  <p class="sidebar-bio">
+    Economic models reveal structure that words can't.
+    I <span class="hl-research">solve</span> them,
+    <span class="hl-build">build</span> tools that solve them faster,
+    and <span class="hl-teach">teach</span> with the same tools I use in research.
+  </p>
+
+  <hr class="sidebar-divider">
+
+  <!-- Navigation -->
+  <nav aria-label="Site navigation">
+    <ul class="sidebar-nav">
+      <li>
+        <a href="/research" data-nav-link>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Research
+        </a>
+      </li>
+      <li>
+        <a href="/teach" data-nav-link>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Teaching
+        </a>
+      </li>
+      <li>
+        <a href="/build" data-nav-link>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Software
+        </a>
+      </li>
+      <li>
+        <a href="/about" data-nav-link>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          About
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <hr class="sidebar-divider">
+
+  <!-- Social links -->
+  <div class="sidebar-social">
+    <a href="https://github.com/albop" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="mailto:pablo.winant@gmail.com" aria-label="Email">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+  </div>
+
+</aside>
+
+
+    <main class="site-main">
+      <!-- Top navigation -->
+      <nav class="top-nav" aria-label="Primary navigation">
+        <div class="top-nav-links">
+          <a href="/research" data-nav-link>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Research
+          </a>
+          <a href="/teach" data-nav-link>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Teach
+          </a>
+          <a href="/build" data-nav-link>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Build
+          </a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span id="theme-label">Dark</span>
+        </button>
+      </nav>
+
+      <div class="page-header">
+        <h1 class="page-title">Research</h1>
+        <p class="page-subtitle">Economic dynamics, computation, and inequality.</p>
+      </div>
+
+      <div class="page-content">
+        <h2 style="font-family:var(--f-serif);font-weight:400;font-size:1.3rem;color:var(--text);margin-bottom:1.2rem;">Published Papers</h2>
+
+<ul class="paper-list">
+
+<li class="paper-item" data-item-id="back-in-time">
+  <div class="paper-title">Back in Time. Fast. Accelerated Time Iteration.</div>
+  <div class="paper-meta">
+    
+    <span class="paper-journal">Journal of Economic Dynamics and Control, </span>
+    <span class="paper-year">2026</span>
+  </div>
+  
+  <a href="/files/papers/accelerated_time_iteration.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="deep-learning">
+  <div class="paper-title">Deep Learning for Solving Dynamic Economic Models?</div>
+  <div class="paper-meta">
+    <span>With Lilia Maliar and Serguei Maliar. </span>
+    <span class="paper-journal">Journal of Monetary Economics, </span>
+    <span class="paper-year">2021</span>
+  </div>
+  
+  <a href="https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="stochastic-lower-bound">
+  <div class="paper-title">The Stochastic Lower Bound</div>
+  <div class="paper-meta">
+    <span>With Riccardo Masolo. </span>
+    <span class="paper-journal">Economics Letters, </span>
+    <span class="paper-year">2019</span>
+  </div>
+  
+  <a href="/files/papers/slb.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="financial-integration">
+  <div class="paper-title">Financial Integration and Growth in a Risky World</div>
+  <div class="paper-meta">
+    <span>With Hélène Rey and Nicolas Coeurdacier. </span>
+    <span class="paper-journal">Journal of Monetary Economics, </span>
+    <span class="paper-year">2019</span>
+  </div>
+  
+  <a href="/files/papers/financial_integration.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="capital-outflows">
+  <div class="paper-title">Managing Capital Outflows with Limited Reserves</div>
+  <div class="paper-meta">
+    <span>With Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry. </span>
+    <span class="paper-journal">IMF Economic Review, </span>
+    <span class="paper-year">2018</span>
+  </div>
+  
+  <a href="/files/papers/reserves_and_outflows_030817.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="inequality-leverage">
+  <div class="paper-title">Inequality, Leverage and Crises</div>
+  <div class="paper-meta">
+    <span>With Michael Kumhof and Romain Rancière. </span>
+    <span class="paper-journal">American Economic Review, </span>
+    <span class="paper-year">2015</span>
+  </div>
+  
+  <a href="/files/papers/inequalities.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="risky-steady-state">
+  <div class="paper-title">The Risky Steady-State</div>
+  <div class="paper-meta">
+    <span>With Helene Rey and Nicolas Coeurdacier. </span>
+    <span class="paper-journal">American Economic Review, Papers and Proceedings, </span>
+    <span class="paper-year">2011</span>
+  </div>
+  
+  <a href="/files/papers/risky_steady_state_1.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+<li class="paper-item" data-item-id="larch">
+  <div class="paper-title">A LARCH(∞) Vector Valued Process</div>
+  <div class="paper-meta">
+    <span>With Paul Doukhan and Gilles Teyssière. </span>
+    <span class="paper-journal">Lecture Notes in Statistics, 187, Springer, </span>
+    <span class="paper-year">2006</span>
+  </div>
+  
+  <a href="/files/papers/dwt1.pdf" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
+    Download PDF ↗
+  </a>
+  
+</li>
+
+</ul>
+
+<h2 style="font-family:var(--f-serif);font-weight:400;font-size:1.3rem;color:var(--text);margin:2rem 0 1.2rem;">Research Interests</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;">
+  
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    Macro-finance
+  </div>
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    International macroeconomics
+  </div>
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    Inequalities
+  </div>
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    Heterogeneous agents
+  </div>
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    Computational economics
+  </div>
+  
+  <div style="background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:.82rem;color:var(--text-muted);">
+    Perturbation methods
+  </div>
+  
+</div>
+
+      </div>
+    </main>
+
+    <!-- Contextual workspace — same as homepage -->
+    <aside class="right-panel">
+
+  <!-- ── PANEL HEADER ──────────────────────────────── -->
+  <div class="panel-header">
+    <div class="panel-header-left">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span class="panel-header-title">Research Workspace</span>
+    </div>
+    <div class="panel-status" id="panel-status" aria-live="polite">
+      <span class="panel-status-dot" id="panel-status-dot"></span>
+      <span class="panel-status-text" id="panel-status-text">Hover to preview</span>
+    </div>
+  </div>
+
+  <div class="workspace" id="workspace">
+
+    <!-- ── DEFAULT STATE ──────────────────────────────── -->
+    <div class="workspace-default" id="workspace-default">
+
+      <p class="workspace-hint">
+        Hover any item to preview it here.<br>
+        <span style="color:var(--text-light)">Click to lock the selection.</span>
+      </p>
+
+      <!-- Research map — clarified with hover affordance cues -->
+      <div class="workspace-map-wrap">
+        <svg viewBox="0 0 260 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto" aria-hidden="true">
+          <line x1="130" y1="90" x2="55"  y2="40"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="205" y2="40"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="55"  y2="145" stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="205" y2="145" stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="20"  y2="90"  stroke="var(--border)" stroke-width="1.5"/>
+          <line x1="130" y1="90" x2="240" y2="90"  stroke="var(--border)" stroke-width="1.5"/>
+          <circle cx="130" cy="90" r="26" fill="#1A3050" opacity=".85"/>
+          <text x="130" y="86"  text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">Questions</text>
+          <text x="130" y="95"  text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">drive</text>
+          <text x="130" y="104" text-anchor="middle" fill="white" font-size="6.5" font-family="Inter,sans-serif" font-weight="600">everything</text>
+          <circle cx="55"  cy="40"  r="16" fill="#EBF3FC"/>
+          <text x="55"  y="37" text-anchor="middle" fill="#1A3050" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Heterogeneous</text>
+          <text x="55"  y="45" text-anchor="middle" fill="#1A3050" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">agents</text>
+          <circle cx="205" cy="40"  r="16" fill="#FEF3E8"/>
+          <text x="205" y="37" text-anchor="middle" fill="#B45309" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Inequality &amp;</text>
+          <text x="205" y="45" text-anchor="middle" fill="#B45309" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">distribution</text>
+          <circle cx="55"  cy="145" r="16" fill="#EAF5F0"/>
+          <text x="55"  y="142" text-anchor="middle" fill="#1A6A4A" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Numerical</text>
+          <text x="55"  y="150" text-anchor="middle" fill="#1A6A4A" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">methods</text>
+          <circle cx="205" cy="145" r="16" fill="#F3EEF9"/>
+          <text x="205" y="142" text-anchor="middle" fill="#6D28D9" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">Macro</text>
+          <text x="205" y="150" text-anchor="middle" fill="#6D28D9" font-size="5.5" font-family="Inter,sans-serif" font-weight="600">dynamics</text>
+          <circle cx="20"  cy="90"  r="14" fill="#EAF5F0"/>
+          <text x="20"  y="87" text-anchor="middle" fill="#1A6A4A" font-size="5" font-family="Inter,sans-serif" font-weight="600">Modeling</text>
+          <text x="20"  y="95" text-anchor="middle" fill="#1A6A4A" font-size="5" font-family="Inter,sans-serif" font-weight="600">software</text>
+          <circle cx="240" cy="90"  r="14" fill="#EBF3FC"/>
+          <text x="240" y="87" text-anchor="middle" fill="#1A5A9A" font-size="5" font-family="Inter,sans-serif" font-weight="600">Open</text>
+          <text x="240" y="95" text-anchor="middle" fill="#1A5A9A" font-size="5" font-family="Inter,sans-serif" font-weight="600">economy</text>
+        </svg>
+        <p class="workspace-map-caption">
+          Research, teaching &amp; software are interconnected.<br>Select any item to explore the links.
+        </p>
+      </div>
+
+    </div><!-- /.workspace-default -->
+
+    <!-- ── ACTIVE STATE (populated by JS) ─────────── -->
+    <div class="workspace-active" id="workspace-active">
+      <!-- JS fills this in -->
+    </div>
+
+  </div><!-- /.workspace -->
+</aside>
+
+
+  </div>
+  <script>
+window.SITE_DATA = { items: {
+  
+  "occasionally-binding": {
+    type: "paper",
+    title: "Occasionally binding constraints in life-cycle models",
+    body: "Life-cycle models with borrowing limits create kinks in policy functions that standard perturbation methods miss. We develop efficient algorithms that handle these occasionally binding constraints without global methods.",
+    
+    meta: "with G. Goldschmidt and N. Wonquin",
+    
+    url: "#",
+    related: [{label:"Dolo (solution toolkit)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl (fast solvers)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"Macro II – Lecture notes",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Computational methods (CREST seminar)",type:"talk",url:"#"},{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},]
+  },
+  
+  "dolo-08": {
+    type: "software",
+    title: "Dolo 0.8: sparse Jacobians, new solvers, and more",
+    
+    body: "Version 0.8 introduces sparse Jacobian computation, enabling perturbation methods for much larger models. New first-order and second-order solvers, improved model specification.",
+    
+    meta: "Release",
+    url: "https://github.com/econforge/dolo",
+    related: [{label:"Back in Time. Fast. (2025)",type:"paper",url:"#"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"On the accuracy of perturbation methods",type:"note",url:"#"},{label:"Computational methods (CREST seminar)",type:"talk",url:"#"},{label:"Computational Macroeconomics (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},]
+  },
+  
+  "comp-macro-notes": {
+    type: "teaching",
+    title: "Computational Macroeconomics – Lecture Notes",
+    
+    body: "Notebooks and slides covering dynamic programming, DSGE models, and heterogeneous-agent models. Students build and solve their own models using Dolo throughout the course.",
+    
+    meta: "ESCP MSc in Economics",
+    url: "https://www.mosphere.fr/ae2e6/",
+    related: [{label:"Dolo (classroom tool)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl (advanced exercises)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"Inequality, Leverage and Crises",type:"paper",url:"files/papers/inequalities.pdf"},{label:"How should computational economics be taught?",type:"question",url:"#"},]
+  },
+  
+  "ha-seminar": {
+    type: "talk",
+    title: "Computational methods for heterogeneous-agent models",
+    
+    body: "Recent advances in solving heterogeneous-agent models: perturbation around the stochastic steady state, sparse Jacobians, and what these enable for policy analysis.",
+    
+    meta: "CREST Seminar",
+    url: "#",
+    related: [{label:"Dolo 0.8 release",type:"software",url:"https://github.com/econforge/dolo"},{label:"Computational Macroeconomics notes",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},]
+  },
+  
+  "perturbation-accuracy": {
+    type: "note",
+    title: "On the accuracy of perturbation methods",
+    
+    body: "A critical examination of when perturbation methods are reliable for dynamic models — and what this implies for the policy conclusions drawn from them.",
+    
+    meta: "Research note",
+    url: "#",
+    related: [{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"Dolo",type:"software",url:"https://github.com/econforge/dolo"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},]
+  },
+  
+  
+  "ha-methods": {
+    type: "project",
+    title: "Numerical methods for heterogeneous-agent models",
+    body: "Algorithms, perturbation methods and solvers for high-dimensional models.",
+    url: "/research",
+    related: [{label:"Back in Time. Fast. (2025)",type:"paper",url:"#"},{label:"Dolo 0.8 — sparse Jacobians",type:"software",url:"https://github.com/econforge/dolo"},{label:"Computational Macroeconomics",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+  "comp-pedagogy": {
+    type: "project",
+    title: "Computational economics pedagogy",
+    body: "Teaching economics through code, models and real applications.",
+    url: "/teach",
+    related: [{label:"Macro II – Lecture Notes",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Topics in Economics",type:"teaching",url:"https://www.mosphere.fr/tie/"},{label:"Dolo (classroom tool)",type:"software",url:"https://github.com/econforge/dolo"},]
+  },
+  
+  "sci-software": {
+    type: "project",
+    title: "Scientific software for economic modeling",
+    body: "Dolo and open-source tools to build, solve and simulate models.",
+    url: "/build",
+    related: [{label:"Dolo",type:"software",url:"https://github.com/econforge/dolo"},{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"Computational Macroeconomics",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+  
+  "ha-efficiency": {
+    type: "question",
+    title: "How can heterogeneous-agent models be solved efficiently at scale?",
+    body: "High-dimensional state spaces break standard methods. Perturbation, sparse Jacobians, and time iteration open new possibilities — but require both theory and software.",
+    related: [{label:"Back in Time. Fast. (2025)",type:"paper",url:"#"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"On the accuracy of perturbation methods",type:"note",url:"#"},{label:"Dolo 0.8 — sparse Jacobians",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl (performance solvers)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"Computational Macroeconomics — notes",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Computational methods (CREST seminar)",type:"talk",url:"#"},]
+  },
+  
+  "teach-compute": {
+    type: "question",
+    title: "How should computational economics be taught to students who aren't programmers?",
+    body: "Economics becomes clearer when students can build and break models themselves. The course should be the lab notebook, not the lecture hall.",
+    related: [{label:"Macro II – Fluctuations (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Topics in Economics",type:"teaching",url:"https://www.mosphere.fr/tie/"},{label:"Dolo (used in exercises)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Computational Macroeconomics notes",type:"note",url:"https://www.mosphere.fr/ae2e6/"},{label:"Deep Learning for Dynamic Models",type:"paper",url:"https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"},]
+  },
+  
+  "software-practice": {
+    type: "question",
+    title: "How can open-source software change the practice of quantitative economics?",
+    body: "Model specification, solution, and simulation should be reproducible, shareable, and composable. Code is part of the argument, not an afterthought.",
+    related: [{label:"Dolo",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"EconForge",type:"software",url:"https://github.com/econforge"},{label:"Deep Learning for Dynamic Models",type:"paper",url:"https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"},{label:"Back in Time. Fast.",type:"paper",url:"#"},{label:"Computational Macroeconomics (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+  
+  "back-in-time": {
+    type: "paper",
+    title: "Back in Time. Fast. Accelerated Time Iteration.",
+    
+    body: "A fast algorithm for solving dynamic models using accelerated time iteration — substantially reducing computation time for standard economic models while maintaining accuracy.",
+    url: "/files/papers/accelerated_time_iteration.pdf",
+
+    related: [{label:"Dolo (implementation)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl (Julia port)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"Computational Macroeconomics (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},{label:"On the accuracy of perturbation methods",type:"note",url:"#"},]
+  },
+  
+  "deep-learning": {
+    type: "paper",
+    title: "Deep Learning for Solving Dynamic Economic Models?",
+    meta: "Lilia Maliar and Serguei Maliar",
+    body: "We compare deep learning to traditional numerical methods for solving dynamic economic models. Standard algorithms remain competitive, but deep learning opens new territory for very high-dimensional problems.",
+    url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf",
+
+    related: [{label:"Dolo",type:"software",url:"https://github.com/econforge/dolo"},{label:"Back in Time. Fast.",type:"paper",url:"/files/papers/accelerated_time_iteration.pdf"},{label:"How can open-source software change economics?",type:"question",url:"#"},{label:"Topics In Economics (TIE)",type:"teaching",url:"https://www.mosphere.fr/tie/"},]
+  },
+  
+  "stochastic-lower-bound": {
+    type: "paper",
+    title: "The Stochastic Lower Bound",
+    meta: "Riccardo Masolo",
+    body: "We derive a lower bound on interest rates that accounts for uncertainty, showing it differs substantially from the deterministic case — with implications for monetary policy analysis.",
+    url: "/files/papers/slb.pdf",
+
+    related: [{label:"Dolo (solution method)",type:"software",url:"https://github.com/econforge/dolo"},{label:"The Risky Steady-State",type:"paper",url:"/files/papers/risky_steady_state_1.pdf"},{label:"Occasionally binding constraints",type:"paper",url:"#"},]
+  },
+  
+  "financial-integration": {
+    type: "paper",
+    title: "Financial Integration and Growth in a Risky World",
+    meta: "Hélène Rey and Nicolas Coeurdacier",
+    body: "We study how financial integration affects growth and welfare in a world with aggregate risk — showing that integration can reduce growth when it amplifies risk sharing distortions.",
+    url: "/files/papers/financial_integration.pdf",
+
+    related: [{label:"The Risky Steady-State",type:"paper",url:"/files/papers/risky_steady_state_1.pdf"},{label:"Managing Capital Outflows",type:"paper",url:"/files/papers/reserves_and_outflows_030817.pdf"},{label:"Dolo (open-economy models)",type:"software",url:"https://github.com/econforge/dolo"},]
+  },
+  
+  "capital-outflows": {
+    type: "paper",
+    title: "Managing Capital Outflows with Limited Reserves",
+    meta: "Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry",
+    body: "A model of optimal capital flow management when foreign reserves are limited. We characterize when capital controls and reserve interventions are complements or substitutes.",
+    url: "/files/papers/reserves_and_outflows_030817.pdf",
+
+    related: [{label:"Financial Integration and Growth",type:"paper",url:"/files/papers/financial_integration.pdf"},{label:"The Risky Steady-State",type:"paper",url:"/files/papers/risky_steady_state_1.pdf"},]
+  },
+  
+  "inequality-leverage": {
+    type: "paper",
+    title: "Inequality, Leverage and Crises",
+    meta: "Michael Kumhof and Romain Rancière",
+    body: "Rising income inequality leads top earners to lend to bottom earners, increasing leverage and crisis risk. A model linking inequality to the financial crises of 1929 and 2008.",
+    url: "/files/papers/inequalities.pdf",
+
+    related: [{label:"Macro II – Fluctuations (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Topics In Economics",type:"teaching",url:"https://www.mosphere.fr/tie/"},{label:"Financial Integration and Growth",type:"paper",url:"/files/papers/financial_integration.pdf"},]
+  },
+  
+  "risky-steady-state": {
+    type: "paper",
+    title: "The Risky Steady-State",
+    meta: "Helene Rey and Nicolas Coeurdacier",
+    body: "In models with uncertainty, the ergodic mean of endogenous variables differs from the deterministic steady state. We characterize this 'risky steady state' and its uses as an approximation point.",
+    url: "/files/papers/risky_steady_state_1.pdf",
+
+    related: [{label:"Financial Integration and Growth",type:"paper",url:"/files/papers/financial_integration.pdf"},{label:"Stochastic Lower Bound",type:"paper",url:"/files/papers/slb.pdf"},{label:"Dolo (perturbation methods)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Macro II – Fluctuations",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+  "larch": {
+    type: "paper",
+    title: "A LARCH(∞) Vector Valued Process",
+    meta: "Paul Doukhan and Gilles Teyssière",
+    body: "We introduce and study a multivariate extension of the LARCH model with an infinite memory structure, establishing stationarity and limit theory for the resulting process.",
+    url: "/files/papers/dwt1.pdf",
+
+    related: []
+  },
+  
+  
+  "course-tie": {
+    type: "teaching",
+    title: "Topics In Economics",
+    meta: "TIE",
+    body: "Advanced topics in macroeconomics and computational methods for graduate students.",
+    url: "https://www.mosphere.fr/tie/",
+    related: [{label:"Dolo (modelling toolkit)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Computational methods seminar",type:"talk",url:"#"},{label:"Deep Learning for Dynamic Models",type:"paper",url:"https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"},{label:"Inequality, Leverage and Crises",type:"paper",url:"files/papers/inequalities.pdf"},{label:"Macro II – Fluctuations (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+  "course-dbe": {
+    type: "teaching",
+    title: "Data Based Economics",
+    meta: "DBE",
+    body: "Applied econometrics and data science techniques for economic analysis.",
+    url: "https://www.mosphere.fr/dbe",
+    related: [{label:"Topics In Economics",type:"teaching",url:"https://www.mosphere.fr/tie/"},{label:"EconForge tools",type:"software",url:"https://github.com/econforge"},]
+  },
+  
+  "course-ae2e6": {
+    type: "teaching",
+    title: "Macro II – Fluctuations",
+    meta: "AE2E6",
+    body: "Business cycle theory, DSGE models, and computational macroeconomics. Students build and solve their own models using Dolo throughout the course.",
+    url: "https://www.mosphere.fr/ae2e6/",
+    related: [{label:"Inequality, Leverage and Crises",type:"paper",url:"files/papers/inequalities.pdf"},{label:"The Risky Steady-State",type:"paper",url:"files/papers/the_risky_steady_state_1.pdf"},{label:"Back in Time. Fast. (2025)",type:"paper",url:"#"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"Dolo (used in exercises)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl (advanced sessions)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"How should computational economics be taught?",type:"question",url:"#"},]
+  },
+  
+  
+  "dolo-python": {
+    type: "software",
+    title: "Dolo.py",
+    meta: "Python",
+    body: "Open-source framework for specifying, solving and simulating economic models. Supports perturbation methods, time iteration, value function iteration, and more.",
+    url: "https://github.com/econforge/dolo",
+
+    related: [{label:"Back in Time. Fast. (2026)",type:"paper",url:"/files/papers/accelerated_time_iteration.pdf"},{label:"Deep Learning for Dynamic Models",type:"paper",url:"https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"},{label:"Occasionally binding constraints",type:"paper",url:"#"},{label:"Computational Macroeconomics (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},{label:"Topics In Economics",type:"teaching",url:"https://www.mosphere.fr/tie/"},{label:"Dolo.jl (Julia port)",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"EconForge",type:"software",url:"https://github.com/econforge"},{label:"How can open-source software change economics?",type:"question",url:"#"},]
+  },
+  
+  "dolo-julia": {
+    type: "software",
+    title: "Dolo.jl",
+    meta: "Julia",
+    body: "Julia port of Dolo with performance-focused solvers. Enables high-dimensional perturbation methods and faster simulation that are impractical in pure Python.",
+    url: "https://github.com/econforge/Dolo.jl",
+
+    related: [{label:"Dolo (Python)",type:"software",url:"https://github.com/econforge/dolo"},{label:"EconForge",type:"software",url:"https://github.com/econforge"},{label:"Back in Time. Fast.",type:"paper",url:"/files/papers/accelerated_time_iteration.pdf"},{label:"How can HA models be solved efficiently?",type:"question",url:"#"},]
+  },
+  
+  "econforge": {
+    type: "software",
+    title: "EconForge",
+    meta: "Organization",
+    body: "GitHub organization hosting a growing collection of open-source tools for quantitative economics, including Dolo, interpolation utilities, and optimization routines.",
+    url: "https://github.com/econforge",
+
+    related: [{label:"Dolo (Python)",type:"software",url:"https://github.com/econforge/dolo"},{label:"Dolo.jl",type:"software",url:"https://github.com/econforge/Dolo.jl"},{label:"How can open-source software change economics?",type:"question",url:"#"},{label:"Computational Macroeconomics (AE2E6)",type:"teaching",url:"https://www.mosphere.fr/ae2e6/"},]
+  },
+  
+} };
+</script>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
