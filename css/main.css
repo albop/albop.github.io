@@ -813,6 +813,18 @@ img { max-width: 100%; display: block; }
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
+/* Markdown body content (from markdownify) inside workspace / accordion */
+.panel-body p        { margin: 0 0 .55em; }
+.panel-body p:last-child { margin-bottom: 0; }
+.panel-body strong   { color: var(--text); font-weight: 600; }
+.panel-body em       { font-style: italic; }
+.panel-body code     { font-family: var(--f-mono); font-size: .88em;
+                       background: var(--border-light); padding: .1em .3em;
+                       border-radius: 3px; }
+/* KaTeX / MathJax display blocks */
+.panel-body .MathJax,
+.panel-body mjx-container { font-size: .9em; }
+
 @media (max-width: 680px) {
   .site-layout { grid-template-columns: 1fr; }
   .sidebar {

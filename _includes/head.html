@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<!-- marked.js — client-side markdown for workspace panel / accordion -->
+<script defer src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
 <script>
   var KATEX_OPTS = {
     delimiters: [
@@ -37,7 +39,7 @@
 <!-- Early theme init to prevent flash -->
 <script>
   (function(){
-    var t = localStorage.getItem('theme') || 'light';
+    var t = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', t);
   })();
 </script>

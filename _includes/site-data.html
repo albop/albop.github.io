@@ -34,9 +34,8 @@ window.SITE_DATA = { items: {
     type: "paper",
     title: {{ item.title | jsonify }},
     {% if item.coauthors %}meta: {{ item.coauthors | jsonify }},{% endif %}
-    body: {{ item.abstract | jsonify }},
+    {% if item.long_description %}body: {{ item.long_description | jsonify }},{% elsif item.abstract %}body: {{ item.abstract | jsonify }},{% endif %}
     {% if item.url %}url: {{ item.url | jsonify }},{% endif %}
-
     related: [{% for r in item.related %}{label:{{ r.label | jsonify }},type:{{ r.type | jsonify }},url:{{ r.url | jsonify }}},{% endfor %}]
   },
   {% endif %}{% endfor %}

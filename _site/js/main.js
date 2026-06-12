@@ -1,13 +1,13 @@
 // ── Dark / Light mode toggle ──────────────────────────────────
 (function () {
   const html = document.documentElement;
-  const stored = localStorage.getItem('theme') || 'light';
+  const stored = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', stored);
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
-  const stored = localStorage.getItem('theme') || 'light';
+  const stored = localStorage.getItem('theme') || 'dark';
 
   const btn   = document.getElementById('theme-toggle');
   const label = document.getElementById('theme-label');
@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     html.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     if (label) label.textContent = theme === 'dark' ? 'Light' : 'Dark';
+    // Swap profile photo
+    const photo = document.getElementById('profile-photo');
+    if (photo) {
+      const src = theme === 'dark' ? photo.dataset.srcDark : photo.dataset.srcLight;
+      if (src) photo.src = src;
+    }
   };
   updateTheme(stored);
   if (btn) btn.addEventListener('click', () => {
@@ -58,6 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const formatMeta = item =>
     item.meta ? (item.type === 'paper' ? `With ${item.meta}` : item.meta) : '';
 
+  // Render markdown + protect math blocks from markdown parser
+  function renderBody(text) {
+    if (!text) return '';
+    // 1. Stash all \[...\] and \(...\) blocks so marked never sees them
+    const stash = [];
+    const protected_text = text
+      .replace(/\\\[[\s\S]*?\\\]/g, m => { stash.push(m); return `\x00MATH${stash.length - 1}\x00`; })
+      .replace(/\\\([\s\S]*?\\\)/g, m => { stash.push(m); return `\x00MATH${stash.length - 1}\x00`; });
+    // 2. Parse markdown
+    let html = window.marked ? window.marked.parse(protected_text) : `<p>${protected_text}</p>`;
+    // 3. Restore math blocks
+    html = html.replace(/\x00MATH(\d+)\x00/g, (_, i) => stash[parseInt(i)]);
+    return html;
+  }
+
   // Build the inner HTML shared by the workspace panel and the accordion
   // Uses inline styles to avoid CSS cascade/specificity issues.
   function buildContent(item) {
@@ -74,8 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.05rem;line-height:1.35;font-weight:400;color:var(--text);margin-top:.1rem;">${item.title}</div>
         ${meta ? `<div style="font-size:.73rem;color:var(--text-muted);font-style:italic;">${meta}</div>` : ''}
       </div>
-      ${item.body ? `<div style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${item.body}</div>` : ''}
+      ${item.body ? `<div class="panel-body" style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${renderBody(item.body)}</div>` : ''}
       ${openLink}`;
+  }
+
+  // Re-run KaTeX on dynamically injected content
+  function renderMath(el) {
+    if (window.renderMathInElement && window.KATEX_OPTS)
+      renderMathInElement(el, window.KATEX_OPTS);
   }
 
   // ── Workspace panel (wide screens) ─────────────────────────
@@ -84,10 +111,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderWorkspace(item) {
     if (!workspace || !activePane) return;
-    activePane.innerHTML = buildContent(item) +
-      `<button class="workspace-clear" id="workspace-clear">✕ Clear</button>`;
-    document.getElementById('workspace-clear').addEventListener('click', clearAll);
+    activePane.innerHTML = buildContent(item);
     workspace.classList.add('has-selection');
+    renderMath(activePane);
   }
 
   function clearWorkspace() {
@@ -114,17 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const acc = document.createElement('div');
     acc.className = 'item-accordion';
     acc.dataset.accordionFor = id;
-    acc.innerHTML = `<div class="accordion-inner">${buildContent(item)}
-      <button class="workspace-clear accordion-close">✕ Close</button></div>`;
+    acc.innerHTML = `<div class="accordion-inner">${buildContent(item)}</div>`;
     anchor.insertAdjacentElement('afterend', acc);
-    // trigger reflow so transition fires
     acc.getBoundingClientRect();
     acc.classList.add('open');
-    acc.querySelector('.accordion-close').addEventListener('click', () => {
-      removeAccordions();
-      deselect(currentId);
-      currentId = null;
-    });
+    renderMath(acc);
   }
 
   // ── Selection logic (shared) ────────────────────────────────
@@ -158,6 +178,28 @@ document.addEventListener('DOMContentLoaded', () => {
       renderWorkspace(item);
     }
   }
+
+  // ── Resize: migrate active selection across breakpoint ───────
+  let wasNarrow = isNarrow();
+  window.addEventListener('resize', () => {
+    const narrow = isNarrow();
+    if (narrow === wasNarrow || !currentId) { wasNarrow = narrow; return; }
+    wasNarrow = narrow;
+
+    const item = data[currentId];
+    if (!item) return;
+
+    if (narrow) {
+      // Wide → Narrow: workspace panel → accordion
+      clearWorkspace();
+      const anchor = document.querySelector(`[data-item-id="${currentId}"].selected`);
+      if (anchor) insertAccordion(anchor, item, currentId);
+    } else {
+      // Narrow → Wide: accordion → workspace panel
+      removeAccordions();
+      renderWorkspace(item);
+    }
+  });
 
   document.querySelectorAll('[data-item-id]').forEach(el =>
     el.addEventListener('click', () => selectItem(el.getAttribute('data-item-id'), el))

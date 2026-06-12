@@ -1,13 +1,13 @@
 // ── Dark / Light mode toggle ──────────────────────────────────
 (function () {
   const html = document.documentElement;
-  const stored = localStorage.getItem('theme') || 'light';
+  const stored = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', stored);
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
-  const stored = localStorage.getItem('theme') || 'light';
+  const stored = localStorage.getItem('theme') || 'dark';
 
   const btn   = document.getElementById('theme-toggle');
   const label = document.getElementById('theme-label');
@@ -64,6 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const formatMeta = item =>
     item.meta ? (item.type === 'paper' ? `With ${item.meta}` : item.meta) : '';
 
+  // Render markdown + protect math blocks from markdown parser
+  function renderBody(text) {
+    if (!text) return '';
+    // 1. Stash all \[...\] and \(...\) blocks so marked never sees them
+    const stash = [];
+    const protected_text = text
+      .replace(/\\\[[\s\S]*?\\\]/g, m => { stash.push(m); return `\x00MATH${stash.length - 1}\x00`; })
+      .replace(/\\\([\s\S]*?\\\)/g, m => { stash.push(m); return `\x00MATH${stash.length - 1}\x00`; });
+    // 2. Parse markdown
+    let html = window.marked ? window.marked.parse(protected_text) : `<p>${protected_text}</p>`;
+    // 3. Restore math blocks
+    html = html.replace(/\x00MATH(\d+)\x00/g, (_, i) => stash[parseInt(i)]);
+    return html;
+  }
+
   // Build the inner HTML shared by the workspace panel and the accordion
   // Uses inline styles to avoid CSS cascade/specificity issues.
   function buildContent(item) {
@@ -80,8 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.05rem;line-height:1.35;font-weight:400;color:var(--text);margin-top:.1rem;">${item.title}</div>
         ${meta ? `<div style="font-size:.73rem;color:var(--text-muted);font-style:italic;">${meta}</div>` : ''}
       </div>
-      ${item.body ? `<div style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${item.body}</div>` : ''}
+      ${item.body ? `<div class="panel-body" style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${renderBody(item.body)}</div>` : ''}
       ${openLink}`;
+  }
+
+  // Re-run KaTeX on dynamically injected content
+  function renderMath(el) {
+    if (window.renderMathInElement && window.KATEX_OPTS)
+      renderMathInElement(el, window.KATEX_OPTS);
   }
 
   // ── Workspace panel (wide screens) ─────────────────────────
@@ -92,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!workspace || !activePane) return;
     activePane.innerHTML = buildContent(item);
     workspace.classList.add('has-selection');
+    renderMath(activePane);
   }
 
   function clearWorkspace() {
@@ -122,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
     anchor.insertAdjacentElement('afterend', acc);
     acc.getBoundingClientRect();
     acc.classList.add('open');
+    renderMath(acc);
   }
 
   // ── Selection logic (shared) ────────────────────────────────
