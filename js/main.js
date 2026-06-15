@@ -97,22 +97,62 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Build the inner HTML shared by the workspace panel and the accordion
   // Uses inline styles to avoid CSS cascade/specificity issues.
+
+  // Resolve connections based on arrays of IDs
+  function buildConnections(item) {
+    let conns = [];
+    
+    function addLinks(ids, prefix) {
+      if (!ids) return;
+      ids.forEach(id => {
+         const target = data[id];
+         if (target) {
+            let title = target.title || target.name || target.question || target.shortTitle || id;
+            conns.push(`<li><strong>${prefix}:</strong> <a href="#" data-item-id="${id}" onclick="event.preventDefault(); document.querySelector('[data-item-id=\'${id}\']').click()">${title}</a></li>`);
+         }
+      });
+    }
+
+    addLinks(item.themeIds || item.relatedThemeIds, 'Theme');
+    addLinks(item.relatedPaperIds, 'Research');
+    addLinks(item.relatedCourseIds, 'Teaching');
+    addLinks(item.relatedSoftwareIds, 'Software');
+    addLinks(item.relatedQuestionIds, 'Question');
+
+    if (conns.length === 0) return '';
+    return `<div style="margin-top:1rem;font-size:.78rem;"><strong>Connections:</strong><ul style="margin-top:0.2rem;padding-left:1.2rem;color:var(--text-muted); line-height: 1.5;">${conns.join('')}</ul></div>`;
+  }
+
   function buildContent(item) {
-    const meta = formatMeta(item);
+    let meta = [];
+    if (item.coauthors) meta.push(`with ${item.coauthors}`);
+    else if (item.authors) meta.push(item.authors);
+    
+    if (item.journal) meta.push(`${item.journal}, ${item.year || ''}`);
+    else if (item.year) meta.push(item.year);
+    
+    if (item.level) meta.push(item.level);
+    if (item.tagline) meta.push(item.tagline);
+
+    let metaStr = meta.join(' • ');
 
     const openLink = item.url && item.url !== '#' && item.url !== '/'
       ? `<a href="${item.url}" target="_blank" rel="noopener"
             style="font-size:.74rem;font-weight:500;color:var(--orange);display:inline-flex;align-items:center;gap:.25rem;text-decoration:none;">Open ↗</a>`
       : '';
 
+    let bodyText = item.long_description || item.abstract || item.description || item.question || '';
+    let titleText = item.title || item.name || item.shortTitle || item.question || '';
+    
     return `
       <div style="display:flex;flex-direction:column;gap:.15rem;">
-        <div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);">${typeLabel(item.type)}</div>
-        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.05rem;line-height:1.35;font-weight:400;color:var(--text);margin-top:.1rem;">${item.title}</div>
-        ${meta ? `<div style="font-size:.73rem;color:var(--text-muted);font-style:italic;">${meta}</div>` : ''}
+        <div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);">${item.type || 'Item'}</div>
+        <div style="font-family:'Instrument Serif',Georgia,serif;font-size:1.05rem;line-height:1.35;font-weight:400;color:var(--text);margin-top:.1rem;">${titleText}</div>
+        ${metaStr ? `<div style="font-size:.73rem;color:var(--text-muted);font-style:italic;">${metaStr}</div>` : ''}
       </div>
-      ${item.body ? `<div class="panel-body" style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${renderBody(item.body)}</div>` : ''}
-      ${openLink}`;
+      ${bodyText ? `<div class="panel-body" style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${renderBody(bodyText)}</div>` : ''}
+      ${buildConnections(item)}
+      <div style="margin-top:0.5rem;">${openLink}</div>`;
   }
 
   // Re-run KaTeX on dynamically injected content
