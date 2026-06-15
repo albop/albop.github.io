@@ -1,0 +1,48 @@
+- id: macro-finance
+  number: "01"
+  title: "Macro-finance, risk, and inequality"
+  shortTitle: "Macro-Finance"
+  description: "Financial frictions, leverage, crises, risky steady states, and international capital flows."
+  visualType: "network"
+  relatedPaperIds:
+    - inequality-leverage
+    - risky-steady-state
+    - financial-integration
+    - capital-outflows
+  relatedCourseIds: []
+  relatedSoftwareIds: []
+  relatedQuestionIds:
+    - macro-finance-question
+
+- id: numerical-methods
+  number: "02"
+  title: "Algorithms for dynamic economic models"
+  shortTitle: "Numerical Methods"
+  description: "Numerical methods, perturbation, time iteration, deep learning, and high-dimensional dynamic models."
+  visualType: "iteration"
+  relatedPaperIds:
+    - back-in-time
+    - deep-learning
+    - stochastic-lower-bound
+  relatedCourseIds: []
+  relatedSoftwareIds:
+    - dolo-python
+    - dolo-julia
+  relatedQuestionIds:
+    - computation-question
+
+- id: teaching-computation
+  number: "03"
+  title: "Teaching economics through computation"
+  shortTitle: "Teaching"
+  description: "Courses, notebooks, code examples, and exercises that help students understand economics by building and experimenting with models."
+  visualType: "notebook"
+  relatedPaperIds: []
+  relatedCourseIds:
+    - course-tie
+    - course-dbe
+    - course-ae2e6
+  relatedSoftwareIds:
+    - dolo-python
+  relatedQuestionIds:
+    - teaching-question

@@ -19,32 +19,12 @@
     ```
 
     Supports perturbation methods (1st and 2nd order), time iteration, value function iteration,
-    and — since v0.8 — sparse Jacobians for large heterogeneous-agent models.
-  related:
-    - label: "Back in Time. Fast. (2026)"
-      type: paper
-      url: "/files/papers/accelerated_time_iteration.pdf"
-    - label: "Deep Learning for Dynamic Models"
-      type: paper
-      url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "Computational Macroeconomics (AE2E6)"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
-    - label: "Topics In Economics"
-      type: teaching
-      url: "https://www.mosphere.fr/tie/"
-    - label: "Dolo.jl (Julia port)"
-      type: software
-      url: "https://github.com/econforge/Dolo.jl"
-    - label: "EconForge"
-      type: software
-      url: "https://github.com/econforge"
-    - label: "How can open-source software change economics?"
-      type: question
-      url: "#"
+    and — since v0.8 — sparse Jacobians for large heterogeneous-agent models.- label: "Back in Time. Fast. (2026)"
+
+  type: "Software"
+  themeIds: ['numerical-methods', 'teaching-computation']
+  relatedPaperIds: ['back-in-time', 'deep-learning']
+  relatedCourseIds: ['course-ae2e6', 'course-tie']
 
 - id: dolo-julia
   name: "Dolo.jl"
@@ -66,20 +46,13 @@
 
     Shares the same YAML model format as the Python version, so models transfer
     directly. Particularly useful for high-dimensional state spaces and
-    heterogeneous-agent models requiring repeated solution.
-  related:
-    - label: "Dolo (Python)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "EconForge"
-      type: software
-      url: "https://github.com/econforge"
-    - label: "Back in Time. Fast."
-      type: paper
-      url: "/files/papers/accelerated_time_iteration.pdf"
-    - label: "How can HA models be solved efficiently?"
-      type: question
-      url: "#"
+    heterogeneous-agent models requiring repeated solution.- label: "Dolo (Python)"
+
+  type: "Software"
+  themeIds: ['numerical-methods']
+  relatedPaperIds: ['back-in-time']
+  relatedCourseIds: []
+  relatedSoftwareIds: ['dolo-python', 'econforge']
 
 - id: econforge
   name: "EconForge"
@@ -97,17 +70,10 @@
     - **interpolation.py** — fast multilinear and spline interpolation with python numba
 
     The goal is to make model code part of the scientific argument —
-    readable, shareable, and reusable across projects.
-  related:
-    - label: "Dolo (Python)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Dolo.jl"
-      type: software
-      url: "https://github.com/econforge/Dolo.jl"
-    - label: "How can open-source software change economics?"
-      type: question
-      url: "#"
-    - label: "Computational Macroeconomics (AE2E6)"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
+    readable, shareable, and reusable across projects.- label: "Dolo (Python)"
+
+  type: "Software"
+  themeIds: ['numerical-methods']
+  relatedPaperIds: []
+  relatedCourseIds: ['course-ae2e6']
+  relatedSoftwareIds: ['dolo-python', 'dolo-julia']

@@ -45,7 +45,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Helpers ─────────────────────────────────────────────────
-  const data = (window.SITE_DATA && window.SITE_DATA.items) || {};
+  
+  const rawData = window.SITE_DATA || {};
+  const data = {};
+  for (const groupKey in rawData) {
+      if (Array.isArray(rawData[groupKey])) {
+          for (const item of rawData[groupKey]) {
+              if (item.id) {
+                  data[item.id] = item;
+                  if (!item.type) {
+                      if (groupKey === 'themes') item.type = 'Theme';
+                      if (groupKey === 'questions') item.type = 'Question';
+                  }
+              }
+          }
+      }
+  }
+
   let currentId = null;
 
   const TYPE_LABEL = {

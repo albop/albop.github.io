@@ -1,125 +1,90 @@
-- id: occasionally-binding
-  title: "Occasionally binding constraints in life-cycle models"
-  authors: "with G. Goldschmidt and N. Wonquin"
-  type: paper
-  date: "Apr 2024"
-  url: "#"
-  abstract: "Life-cycle models with borrowing limits create kinks in policy functions that standard perturbation methods miss. We develop efficient algorithms that handle these occasionally binding constraints without global methods."
-  related:
-    - label: "Dolo (solution toolkit)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Dolo.jl (fast solvers)"
-      type: software
-      url: "https://github.com/econforge/Dolo.jl"
-    - label: "Macro II – Lecture notes"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
-    - label: "Computational methods (CREST seminar)"
-      type: talk
-      url: "#"
-    - label: "Back in Time. Fast."
-      type: paper
-      url: "#"
-    - label: "How can HA models be solved efficiently?"
-      type: question
-      url: "#"
+- id: act-back-in-time
+  title: "Back in Time. Fast. Accelerated Time Iteration."
+  type: Paper
+  date: "2026"
+  url: "/files/papers/accelerated_time_iteration.pdf"
+  itemId: back-in-time
 
-- id: dolo-08
-  title: "Dolo 0.8: sparse Jacobians, new solvers, and more"
-  subtitle: "Release"
-  type: software
-  date: "Feb 2024"
-  url: "https://github.com/econforge/dolo"
-  description: "Version 0.8 introduces sparse Jacobian computation, enabling perturbation methods for much larger models. New first-order and second-order solvers, improved model specification."
-  related:
-    - label: "Back in Time. Fast. (2025)"
-      type: paper
-      url: "#"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "On the accuracy of perturbation methods"
-      type: note
-      url: "#"
-    - label: "Computational methods (CREST seminar)"
-      type: talk
-      url: "#"
-    - label: "Computational Macroeconomics (AE2E6)"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
-    - label: "How can HA models be solved efficiently?"
-      type: question
-      url: "#"
+- id: act-deep-learning
+  title: "Deep Learning for Solving Dynamic Economic Models?"
+  authors: "with Lilia Maliar and Serguei Maliar"
+  type: Paper
+  date: "2021"
+  url: "/files/papers/dl.pdf"
+  itemId: deep-learning
 
-- id: comp-macro-notes
-  title: "Computational Macroeconomics – Lecture Notes"
-  subtitle: "ESCP MSc in Economics"
-  type: teaching
-  date: "Jan 2024"
+- id: act-stochastic-lower-bound
+  title: "The Stochastic Lower Bound"
+  authors: "with Riccardo Masolo"
+  type: Paper
+  date: "2019"
+  url: "/files/papers/slb.pdf"
+  itemId: stochastic-lower-bound
+
+- id: act-financial-integration
+  title: "Financial Integration and Growth in a Risky World"
+  authors: "with Hélène Rey and Nicolas Coeurdacier"
+  type: Paper
+  date: "2019"
+  url: "/files/papers/financial_integration.pdf"
+  itemId: financial-integration
+
+- id: act-capital-outflows
+  title: "Managing Capital Outflows with Limited Reserves"
+  authors: "with Suman S. Basu, Atish R. Ghosh and Jonathan D. Ostry"
+  type: Paper
+  date: "2018"
+  url: "/files/papers/reserves_and_outflows_030817.pdf"
+  itemId: capital-outflows
+
+- id: act-inequality-leverage
+  title: "Inequality, Leverage and Crises"
+  authors: "with Michael Kumhof and Romain Rancière"
+  type: Paper
+  date: "2015"
+  url: "/files/papers/inequalities.pdf"
+  itemId: inequality-leverage
+
+- id: act-risky-steady-state
+  title: "The Risky Steady-State"
+  authors: "with Helene Rey and Nicolas Coeurdacier"
+  type: Paper
+  date: "2011"
+  url: "/files/papers/risky_steady_state_1.pdf"
+  itemId: risky-steady-state
+
+- id: act-tie
+  title: "Topics In Economics"
+  type: Course
+  url: "https://www.mosphere.fr/tie/"
+  itemId: course-tie
+
+- id: act-dbe
+  title: "Data Based Economics"
+  type: Course
+  url: "https://www.mosphere.fr/dbe"
+  itemId: course-dbe
+
+- id: act-ae2e6
+  title: "Macro II – Fluctuations"
+  type: Course
   url: "https://www.mosphere.fr/ae2e6/"
-  description: "Notebooks and slides covering dynamic programming, DSGE models, and heterogeneous-agent models. Students build and solve their own models using Dolo throughout the course."
-  related:
-    - label: "Dolo (classroom tool)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Dolo.jl (advanced exercises)"
-      type: software
-      url: "https://github.com/econforge/Dolo.jl"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "Back in Time. Fast."
-      type: paper
-      url: "#"
-    - label: "Inequality, Leverage and Crises"
-      type: paper
-      url: "files/papers/inequalities.pdf"
-    - label: "How should computational economics be taught?"
-      type: question
-      url: "#"
+  itemId: course-ae2e6
 
-- id: ha-seminar
-  title: "Computational methods for heterogeneous-agent models"
-  subtitle: "CREST Seminar"
-  type: talk
-  date: "Nov 2023"
-  url: "#"
-  description: "Recent advances in solving heterogeneous-agent models: perturbation around the stochastic steady state, sparse Jacobians, and what these enable for policy analysis."
-  related:
-    - label: "Dolo 0.8 release"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Computational Macroeconomics notes"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "Back in Time. Fast."
-      type: paper
-      url: "#"
-    - label: "How can HA models be solved efficiently?"
-      type: question
-      url: "#"
+- id: act-dolo-python
+  title: "Dolo.py"
+  type: Software
+  url: "https://github.com/econforge/dolo"
+  itemId: dolo-python
 
-- id: perturbation-accuracy
-  title: "On the accuracy of perturbation methods"
-  subtitle: "Research note"
-  type: note
-  date: "Oct 2023"
-  url: "#"
-  description: "A critical examination of when perturbation methods are reliable for dynamic models — and what this implies for the policy conclusions drawn from them."
-  related:
-    - label: "Back in Time. Fast."
-      type: paper
-      url: "#"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "Dolo"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "How can HA models be solved efficiently?"
-      type: question
-      url: "#"
+- id: act-dolo-julia
+  title: "Dolo.jl"
+  type: Software
+  url: "https://github.com/econforge/Dolo.jl"
+  itemId: dolo-julia
+
+- id: act-econforge
+  title: "EconForge"
+  type: Software
+  url: "https://github.com/econforge"
+  itemId: econforge

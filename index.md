@@ -10,7 +10,7 @@ description: "Computational economist studying economic dynamics through models,
   <section class="hero">
     <div>
       <h1 class="hero-title">
-        Understanding economic dynamics through <u>models</u> and computation.
+        I work on macroeconomic dynamics, numerical methods, and the tools economists use to connect them.
       </h1>
     </div>
     <svg class="hero-diagram" width="180" height="160" viewBox="0 0 180 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -35,7 +35,7 @@ description: "Computational economist studying economic dynamics through models,
     </div>
     <div class="question-list">
       {% for q in site.data.questions %}
-      <div class="question-item" data-item-id="{{ q.id }}">
+      <div class="question-item" data-item-id="{{ q.id }}" data-item-type="Question">
         <span class="question-text">{{ q.question }}</span>
         <span class="question-arrow">→</span>
       </div>
@@ -43,18 +43,18 @@ description: "Computational economist studying economic dynamics through models,
     </div>
   </section>
 
-  <!-- ── CURRENTLY WORKING ON ───────────────────────── -->
+  <!-- ── CORE THEMES ───────────────────────── -->
   <section class="projects-section">
     <div class="section-header">
-      <span class="section-label">Currently Working On</span>
-      <a href="/research" class="section-link">View all projects &rarr;</a>
+      <span class="section-label">Core Themes</span>
+      <a href="/research" class="section-link">View all research &rarr;</a>
     </div>
     <div class="projects-grid">
-      {% for project in site.data.projects %}
-      <article class="project-card" data-item-id="{{ project.id }}">
-        <div class="project-number">{{ project.number }}</div>
+      {% for theme in site.data.themes %}
+      <article class="project-card" data-item-id="{{ theme.id }}" data-item-type="Theme">
+        <div class="project-number">{{ theme.number }}</div>
         <div class="project-thumb">
-          {% if project.number == "01" %}
+          {% if theme.visualType == "network" %}
           <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
             <path d="M5,50 Q30,30 60,20 T115,10" fill="none" stroke="#E07820" stroke-width="1.5" opacity=".7"/>
             <circle cx="30" cy="38" r="1.5" fill="#1A3050" opacity=".4"/>
@@ -62,7 +62,7 @@ description: "Computational economist studying economic dynamics through models,
             <circle cx="80" cy="18" r="1.5" fill="#1A3050" opacity=".4"/>
             <circle cx="105" cy="12" r="1.5" fill="#1A3050" opacity=".4"/>
           </svg>
-          {% elsif project.number == "02" %}
+          {% elsif theme.visualType == "iteration" %}
           <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
             <line x1="10" y1="50" x2="110" y2="50" stroke="#2E7D72" stroke-width=".8" opacity=".3"/>
             <line x1="10" y1="35" x2="110" y2="35" stroke="#2E7D72" stroke-width=".8" opacity=".3"/>
@@ -73,7 +73,7 @@ description: "Computational economist studying economic dynamics through models,
             <line x1="95" y1="10" x2="95" y2="55" stroke="#2E7D72" stroke-width=".8" opacity=".3"/>
             <path d="M10,48 L20,42 L45,30 L70,22 L95,15 L110,12" fill="none" stroke="#E07820" stroke-width="1.5"/>
           </svg>
-          {% else %}
+          {% elsif theme.visualType == "notebook" %}
           <svg viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
             <ellipse cx="60" cy="30" rx="50" ry="22" fill="none" stroke="#1A3050" stroke-width="1" opacity=".2"/>
             <ellipse cx="60" cy="30" rx="35" ry="15" fill="none" stroke="#1A3050" stroke-width="1" opacity=".3"/>
@@ -82,14 +82,15 @@ description: "Computational economist studying economic dynamics through models,
           </svg>
           {% endif %}
         </div>
-        <div class="project-title">{{ project.title }}</div>
-        <div class="project-desc">{{ project.description }}</div>
-        <a href="{{ project.url }}" class="project-explore" onclick="event.stopPropagation()">Explore &rarr;</a>
+        <div class="project-title">{{ theme.title }}</div>
+        <div class="project-desc">{{ theme.description }}</div>
+        <a href="#workspace" class="project-explore" onclick="event.stopPropagation()">Explore &rarr;</a>
       </article>
       {% endfor %}
     </div>
   </section>
 
+  {% comment %}
   <!-- ── RECENT ACTIVITY ────────────────────────────── -->
   <section class="activity-section">
     <div class="section-header">
@@ -97,14 +98,13 @@ description: "Computational economist studying economic dynamics through models,
     </div>
     <div class="activity-list">
       {% for item in site.data.activity %}
-      <article class="activity-item" data-item-id="{{ item.id }}">
+      <article class="activity-item" data-item-id="{{ item.itemId }}" data-item-type="{{ item.type }}">
         <div class="activity-content">
           <div class="activity-title">{{ item.title }}</div>
           {% if item.authors %}<div class="activity-subtitle">{{ item.authors }}</div>{% endif %}
-          {% if item.subtitle %}<div class="activity-subtitle">{{ item.subtitle }}</div>{% endif %}
         </div>
-        <span class="activity-badge badge-{{ item.type }}">{{ item.type }}</span>
-        <span class="activity-date">{{ item.date }}</span>
+        <span class="activity-badge badge-{{ item.type | downcase }}">{{ item.type }}</span>
+        {% if item.date %}<span class="activity-date">{{ item.date }}</span>{% endif %}
       </article>
       {% endfor %}
     </div>
@@ -112,20 +112,27 @@ description: "Computational economist studying economic dynamics through models,
       <a href="/research">View all activity &rarr;</a>
     </div>
   </section>
+  {% endcomment %}
 
-  <!-- ── NEWSLETTER ─────────────────────────────────── -->
-  <div class="newsletter">
-    <div class="newsletter-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  <!-- ── RECENT EVENT ─────────────────────────────────── -->
+  <section class="activity-section">
+    <div class="section-header">
+      <span class="section-label">Recent Event</span>
     </div>
-    <div class="newsletter-text">
-      <div class="newsletter-title">Stay in the loop</div>
-      <div class="newsletter-sub">Occasional updates on research, software and teaching.</div>
+    <div class="news-callout" style="border: 1px solid var(--border); padding: 1.5rem; border-radius: var(--radius); display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; background-color: var(--bg-card);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <h3 style="margin:0; font-family: 'Instrument Serif', Georgia, serif; font-size: 1.4rem; font-weight: 400; color: var(--text);">T2M 2026 Conference</h3>
+        <span class="activity-badge badge-talk" style="margin:0; background: var(--bg); border: 1px solid var(--border);">Conference</span>
+      </div>
+      <p style="margin:0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+        The Theories and Methods in Macroeconomics (T2M) conference recently concluded in Montreal, hosted by HEC Montreal.
+      </p>
+      <a href="http://t2m.network" target="_blank" rel="noopener" style="font-size: 0.8rem; font-weight: 500; color: var(--orange); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 0.5rem;">
+        Visit t2m.network <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+      </a>
     </div>
-    <form class="newsletter-form" id="newsletter-form" action="#" method="post">
-      <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address" required>
-      <button type="submit" class="newsletter-btn">Subscribe</button>
-    </form>
-  </div>
+  </section>
+
+
 
 </div>

@@ -4,22 +4,11 @@
   url: "https://www.mosphere.fr/tie/"
   description: "Advanced topics in macroeconomics and computational methods for graduate students."
   level: "Master"
-  related:
-    - label: "Dolo (modelling toolkit)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Computational methods seminar"
-      type: talk
-      url: "#"
-    - label: "Deep Learning for Dynamic Models"
-      type: paper
-      url: "https://lmaliar.ws.gc.cuny.edu/files/2021/09/Deep-learning-for-solving-dynamic-economic-models.-_-Elsevier-Enhanced-Reader.pdf"
-    - label: "Inequality, Leverage and Crises"
-      type: paper
-      url: "files/papers/inequalities.pdf"
-    - label: "Macro II – Fluctuations (AE2E6)"
-      type: teaching
-      url: "https://www.mosphere.fr/ae2e6/"
+
+  type: "Course"
+  themeIds: ['teaching-computation']
+  relatedSoftwareIds: ['dolo-python']
+  relatedPaperIds: ['deep-learning', 'inequality-leverage']
 
 - id: course-dbe
   title: "Data Based Economics"
@@ -27,13 +16,12 @@
   url: "https://www.mosphere.fr/dbe"
   description: "Applied econometrics and data science techniques for economic analysis."
   level: "Master"
-  related:
-    - label: "Topics In Economics"
-      type: teaching
-      url: "https://www.mosphere.fr/tie/"
-    - label: "EconForge tools"
-      type: software
-      url: "https://github.com/econforge"
+
+  type: "Course"
+  themeIds: ['teaching-computation']
+  relatedSoftwareIds: ['econforge']
+  relatedPaperIds: []
+  relatedCourseIds: ['course-tie']
 
 - id: course-ae2e6
   title: "Macro II – Fluctuations"
@@ -41,25 +29,8 @@
   url: "https://www.mosphere.fr/ae2e6/"
   description: "Business cycle theory, DSGE models, and computational macroeconomics. Students build and solve their own models using Dolo throughout the course."
   level: "Master"
-  related:
-    - label: "Inequality, Leverage and Crises"
-      type: paper
-      url: "files/papers/inequalities.pdf"
-    - label: "The Risky Steady-State"
-      type: paper
-      url: "files/papers/the_risky_steady_state_1.pdf"
-    - label: "Back in Time. Fast. (2025)"
-      type: paper
-      url: "#"
-    - label: "Occasionally binding constraints"
-      type: paper
-      url: "#"
-    - label: "Dolo (used in exercises)"
-      type: software
-      url: "https://github.com/econforge/dolo"
-    - label: "Dolo.jl (advanced sessions)"
-      type: software
-      url: "https://github.com/econforge/Dolo.jl"
-    - label: "How should computational economics be taught?"
-      type: question
-      url: "#"
+
+  type: "Course"
+  themeIds: ['teaching-computation']
+  relatedSoftwareIds: ['dolo-python', 'dolo-julia']
+  relatedPaperIds: ['inequality-leverage', 'risky-steady-state', 'back-in-time']
