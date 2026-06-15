@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ${metaStr ? `<div style="font-size:.73rem;color:var(--text-muted);font-style:italic;">${metaStr}</div>` : ''}
       </div>
       ${bodyText ? `<div class="panel-body" style="font-size:.78rem;color:var(--text-muted);line-height:1.7;">${renderBody(bodyText)}</div>` : ''}
-      ${buildConnections(item)}
       <div style="margin-top:0.5rem;">${openLink}</div>`;
   }
 
