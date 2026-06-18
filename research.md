@@ -23,15 +23,7 @@ permalink: /research/
         Download PDF ↗
       </a>
       {% endif %}
-      {% if paper.presentations %}
-        {% for pres in paper.presentations %}
-          {% if pres.url %}
-          <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
-            {{ pres.name }} PDF ↗
-          </a>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      
     </div>
   </li>
   {% endif %}
@@ -56,16 +48,19 @@ permalink: /research/
         Download PDF ↗
       </a>
       {% endif %}
-      {% if paper.presentations %}
-        {% for pres in paper.presentations %}
-          {% if pres.url %}
-          <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
-            {{ pres.name }} PDF ↗
-          </a>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+      
     </div>
+      {% if paper.presentations %}
+        <div class="paper-presentations" style="margin-top: .5rem;">
+          {% for pres in paper.presentations %}
+            {% if pres.url %}
+              <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+                {{ pres.name }} PDF ↗
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
   </li>
   {% endif %}
 {% endfor %}
