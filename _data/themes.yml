@@ -24,6 +24,7 @@
     - back-in-time
     - deep-learning
     - stochastic-lower-bound
+    - behavioral-alignment
   relatedCourseIds: []
   relatedSoftwareIds:
     - dolo-python

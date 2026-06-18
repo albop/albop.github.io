@@ -128,18 +128,36 @@ document.addEventListener('DOMContentLoaded', () => {
     if (item.coauthors) meta.push(`with ${item.coauthors}`);
     else if (item.authors) meta.push(item.authors);
     
-    if (item.journal) meta.push(`${item.journal}, ${item.year || ''}`);
-    else if (item.year) meta.push(item.year);
+    if (item.journal) {
+      meta.push(`${item.journal}, ${item.year || ''}`);
+    } else {
+      if (item.presentations && item.presentations.length > 0) {
+        const presNames = item.presentations.map(p => p.name).join(', ');
+        meta.push(`Presented at ${presNames}`);
+      }
+      if (item.year) meta.push(item.year);
+    }
     
     if (item.level) meta.push(item.level);
     if (item.tagline) meta.push(item.tagline);
 
     let metaStr = meta.join(' • ');
 
-    const openLink = item.url && item.url !== '#' && item.url !== '/'
-      ? `<a href="${item.url}" target="_blank" rel="noopener"
-            style="font-size:.74rem;font-weight:500;color:var(--orange);display:inline-flex;align-items:center;gap:.25rem;text-decoration:none;">Open ↗</a>`
-      : '';
+    let links = [];
+    if (item.url && item.url !== '#' && item.url !== '/') {
+      const label = (item.type === 'Paper' || item.type === 'Working Paper') ? 'Download PDF ↗' : 'Open ↗';
+      links.push(`<a href="${item.url}" target="_blank" rel="noopener"
+            style="font-size:.74rem;font-weight:500;color:var(--orange);display:inline-flex;align-items:center;gap:.25rem;text-decoration:none;">${label}</a>`);
+    }
+    if (item.presentations && item.presentations.length > 0) {
+      item.presentations.forEach(pres => {
+        if (pres.url) {
+          links.push(`<a href="${pres.url}" target="_blank" rel="noopener"
+                style="font-size:.74rem;font-weight:500;color:var(--orange);display:inline-flex;align-items:center;gap:.25rem;text-decoration:none;">${pres.name} PDF ↗</a>`);
+        }
+      });
+    }
+    const openLink = links.join('<span style="color:var(--text-light);font-size:.74rem;margin:0 .4rem;"> • </span>');
 
     let bodyText = item.long_description || item.abstract || item.description || item.question || '';
     let titleText = item.title || item.name || item.shortTitle || item.question || '';

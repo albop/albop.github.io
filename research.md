@@ -5,23 +5,69 @@ subtitle: "Economic dynamics, computation, and inequality."
 permalink: /research/
 ---
 
-<h2 style="font-family:var(--f-serif);font-weight:400;font-size:1.3rem;color:var(--text);margin-bottom:1.2rem;">Published Papers</h2>
+<h2 style="font-family:var(--f-serif);font-weight:400;font-size:1.3rem;color:var(--text);margin-bottom:1.2rem;">Working Papers</h2>
 
 <ul class="paper-list">
 {% for paper in site.data.papers %}
-<li class="paper-item" data-item-id="{{ paper.id }}">
-  <div class="paper-title">{{ paper.title }}</div>
-  <div class="paper-meta">
-    {% if paper.coauthors %}<span>With {{ paper.coauthors }}. </span>{% endif %}
-    <span class="paper-journal">{{ paper.journal }}, </span>
-    <span class="paper-year">{{ paper.year }}</span>
-  </div>
-  {% if paper.url and paper.url != '#' %}
-  <a href="{{ paper.url }}" target="_blank" rel="noopener" class="card-download" onclick="event.stopPropagation()">
-    Download PDF ↗
-  </a>
+  {% if paper.type == "Working Paper" %}
+  <li class="paper-item" data-item-id="{{ paper.id }}">
+    <div class="paper-title">{{ paper.title }}</div>
+    <div class="paper-meta">
+      {% if paper.coauthors %}<span>With {{ paper.coauthors }}. </span>{% endif %}
+      {% if paper.journal %}<span class="paper-journal">{{ paper.journal }}, </span>{% endif %}
+      <span class="paper-year">{{ paper.year }}</span>
+    </div>
+    <div class="paper-downloads" style="display: flex; gap: 1rem; margin-top: .35rem;">
+      {% if paper.url and paper.url != '#' %}
+      <a href="{{ paper.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+        Download PDF ↗
+      </a>
+      {% endif %}
+      {% if paper.presentations %}
+        {% for pres in paper.presentations %}
+          {% if pres.url %}
+          <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+            {{ pres.name }} PDF ↗
+          </a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </li>
   {% endif %}
-</li>
+{% endfor %}
+</ul>
+
+<h2 style="font-family:var(--f-serif);font-weight:400;font-size:1.3rem;color:var(--text);margin:2rem 0 1.2rem;">Published Papers</h2>
+
+<ul class="paper-list">
+{% for paper in site.data.papers %}
+  {% if paper.type == "Paper" or paper.type == nil %}
+  <li class="paper-item" data-item-id="{{ paper.id }}">
+    <div class="paper-title">{{ paper.title }}</div>
+    <div class="paper-meta">
+      {% if paper.coauthors %}<span>With {{ paper.coauthors }}. </span>{% endif %}
+      {% if paper.journal %}<span class="paper-journal">{{ paper.journal }}, </span>{% endif %}
+      <span class="paper-year">{{ paper.year }}</span>
+    </div>
+    <div class="paper-downloads" style="display: flex; gap: 1rem; margin-top: .35rem;">
+      {% if paper.url and paper.url != '#' %}
+      <a href="{{ paper.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+        Download PDF ↗
+      </a>
+      {% endif %}
+      {% if paper.presentations %}
+        {% for pres in paper.presentations %}
+          {% if pres.url %}
+          <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+            {{ pres.name }} PDF ↗
+          </a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </li>
+  {% endif %}
 {% endfor %}
 </ul>
 

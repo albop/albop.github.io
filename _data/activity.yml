@@ -1,3 +1,10 @@
+- id: act-behavioral-alignment
+  title: "Minds Like Ours? Priming LLMs for Behavioral Alignment"
+  authors: "with Wanda Mimra"
+  type: Paper
+  date: "2026"
+  itemId: behavioral-alignment
+
 - id: act-back-in-time
   title: "Back in Time. Fast. Accelerated Time Iteration."
   type: Paper
