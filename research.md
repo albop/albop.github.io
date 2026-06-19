@@ -17,14 +17,24 @@ permalink: /research/
       {% if paper.journal %}<span class="paper-journal">{{ paper.journal }}, </span>{% endif %}
       <span class="paper-year">{{ paper.year }}</span>
     </div>
-    <div class="paper-downloads" style="display: flex; gap: 1rem; margin-top: .35rem;">
-      {% if paper.url and paper.url != '#' %}
-      <a href="{{ paper.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
-        Download PDF ↗
-      </a>
-      {% endif %}
-      
+  <div class="paper-downloads" style="display: flex; gap: 1rem; margin-top: .35rem;">
+    {% if paper.url and paper.url != '#' %}
+    <a href="{{ paper.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+      Download PDF ↗
+    </a>
+    {% endif %}
+    {% if paper.presentations %}
+    <div class="paper-presentations" style="margin-top: .5rem;">
+      {% for pres in paper.presentations %}
+        {% if pres.url %}
+        <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
+          {{ pres.name }} ↗
+        </a>
+        {% endif %}
+      {% endfor %}
     </div>
+    {% endif %}
+  </div>
   </li>
   {% endif %}
 {% endfor %}
@@ -55,7 +65,7 @@ permalink: /research/
           {% for pres in paper.presentations %}
             {% if pres.url %}
               <a href="{{ pres.url }}" target="_blank" rel="noopener" class="card-download" style="margin-top: 0;" onclick="event.stopPropagation()">
-                {{ pres.name }} PDF ↗
+                {{ pres.name }} ↗
               </a>
             {% endif %}
           {% endfor %}

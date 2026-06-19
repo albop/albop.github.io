@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
   const stored = localStorage.getItem('theme') || 'dark';
 
-  const btn   = document.getElementById('theme-toggle');
+  const btn = document.getElementById('theme-toggle');
   const label = document.getElementById('theme-label');
 
   const updateTheme = (theme) => {
@@ -45,21 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Helpers ─────────────────────────────────────────────────
-  
+
   const rawData = window.SITE_DATA || {};
   const data = {};
   for (const groupKey in rawData) {
-      if (Array.isArray(rawData[groupKey])) {
-          for (const item of rawData[groupKey]) {
-              if (item.id) {
-                  data[item.id] = item;
-                  if (!item.type) {
-                      if (groupKey === 'themes') item.type = 'Theme';
-                      if (groupKey === 'questions') item.type = 'Question';
-                  }
-              }
+    if (Array.isArray(rawData[groupKey])) {
+      for (const item of rawData[groupKey]) {
+        if (item.id) {
+          data[item.id] = item;
+          if (!item.type) {
+            if (groupKey === 'themes') item.type = 'Theme';
+            if (groupKey === 'questions') item.type = 'Question';
           }
+        }
       }
+    }
   }
 
   let currentId = null;
@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     talk: 'conn-talk', note: 'conn-note'
   };
 
-  const typeLabel  = t => TYPE_LABEL[t] || t;
-  const connClass  = t => CONN_CLASS[t] || 'conn-note';
+  const typeLabel = t => TYPE_LABEL[t] || t;
+  const connClass = t => CONN_CLASS[t] || 'conn-note';
 
   // Prepend "With " for paper coauthors
   const formatMeta = item =>
@@ -101,15 +101,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Resolve connections based on arrays of IDs
   function buildConnections(item) {
     let conns = [];
-    
+
     function addLinks(ids, prefix) {
       if (!ids) return;
       ids.forEach(id => {
-         const target = data[id];
-         if (target) {
-            let title = target.title || target.name || target.question || target.shortTitle || id;
-            conns.push(`<li><strong>${prefix}:</strong> <a href="#" data-item-id="${id}" onclick="event.preventDefault(); document.querySelector('[data-item-id=\'${id}\']').click()">${title}</a></li>`);
-         }
+        const target = data[id];
+        if (target) {
+          let title = target.title || target.name || target.question || target.shortTitle || id;
+          conns.push(`<li><strong>${prefix}:</strong> <a href="#" data-item-id="${id}" onclick="event.preventDefault(); document.querySelector('[data-item-id=\'${id}\']').click()">${title}</a></li>`);
+        }
       });
     }
 
@@ -127,17 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let meta = [];
     if (item.coauthors) meta.push(`with ${item.coauthors}`);
     else if (item.authors) meta.push(item.authors);
-    
+
     if (item.journal) {
       meta.push(`${item.journal}, ${item.year || ''}`);
     } else {
-      if (item.presentations && item.presentations.length > 0 && item.type !== 'Paper') {
-        const presNames = item.presentations.map(p => p.name).join(', ');
-        meta.push(`Presented at ${presNames}`);
-      }
       if (item.year) meta.push(item.year);
     }
-    
+
     if (item.level) meta.push(item.level);
     if (item.tagline) meta.push(item.tagline);
 
@@ -164,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let bodyText = item.long_description || item.abstract || item.description || item.question || '';
     let titleText = item.title || item.name || item.shortTitle || item.question || '';
-    
+
     return `
       <div style="display:flex;flex-direction:column;gap:.15rem;">
         <div style="font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);">${item.type || 'Item'}</div>
@@ -182,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── Workspace panel (wide screens) ─────────────────────────
-  const workspace  = document.getElementById('workspace');
+  const workspace = document.getElementById('workspace');
   const activePane = document.getElementById('workspace-active');
 
   function renderWorkspace(item) {

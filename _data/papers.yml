@@ -2,11 +2,10 @@
   title: "Minds Like Ours? Priming LLMs for Behavioral Alignment: Evidence from the Preference Survey Module"
   coauthors: "Wanda Mimra"
   year: 2026
+  # url: "/files/papers/gpt_rabat.pdf"
   presentations:
     - name: "ESA Rabat 2026"
       url: "/files/papers/gpt_rabat.pdf"
-  abstract: "We analyze whether large language models (LLMs) can be steered to behave according to human-like behavioral preferences using a simple protocol grounded in the Preference Survey Module (PSM, @Falketal2023), a canonical survey tool developed to elicit human risk and social preferences. Comparing LLM responses to the PSM human calibration sample shows that LLM means differ systematically from humans and response distributions are markedly compressed, which is only little alleviated by chain-of-thought prompting. A cluster analysis for the chain-of-thought experiment helps explain LLM variation but does not systematically reveal behavioral types. In the main experiment, we find that a simple priming approach with the PSM self-assessment items moves LLM choices in the human-predicted directions across all preference traits; however, slopes vary across model versions even within the GPT family. Our findings suggest that a simple PSM-based priming provides an interpretable steering tool for qualitative alignment, while quantitative calibration remains a challenge."
-  long_description: "We analyze whether large language models (LLMs) can be steered to behave according to human-like behavioral preferences using a simple protocol grounded in the Preference Survey Module (PSM, @Falketal2023), a canonical survey tool developed to elicit human risk and social preferences. Comparing LLM responses to the PSM human calibration sample shows that LLM means differ systematically from humans and response distributions are markedly compressed, which is only little alleviated by chain-of-thought prompting. A cluster analysis for the chain-of-thought experiment helps explain LLM variation but does not systematically reveal behavioral types. In the main experiment, we find that a simple priming approach with the PSM self-assessment items moves LLM choices in the human-predicted directions across all preference traits; however, slopes vary across model versions even within the GPT family. Our findings suggest that a simple PSM-based priming provides an interpretable steering tool for qualitative alignment, while quantitative calibration remains a challenge."
   type: "Working Paper"
   themeIds: ['numerical-methods']
   relatedSoftwareIds: []
